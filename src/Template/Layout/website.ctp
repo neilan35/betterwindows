@@ -10,14 +10,14 @@
         
 
     <title>Better Windows Prototype</title>
-
+    <?php echo $this->Html->css('custom.css');?>
     <!-- Bootstrap Core CSS -->
     <?php echo $this->Html->css('bootstrap.min.css');?>
     <?php echo $this->Html->css('bootstrap.css');?>
 
     <!-- Custom CSS -->
     <?php echo $this->Html->css('modern-business.css');?>
-    <?php echo $this->Html->css('custom.css');?>
+    
     <!-- Custom Fonts -->
     <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!-- jQuery -->
@@ -54,13 +54,13 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active">
-                            <a href=""><span class="glyphicon glyphicon-home"></span> HOME</a>
+                            <?= $this->Html->link(__('HOME'), ['controller' =>'Pages', 'action' => 'home'])?>
                         </li>
                         <li>
-                            <a href="#">ABOUT US</a>
+                            <?= $this->Html->link(__('ABOUT US'), ['controller' =>'Pages', 'action' => 'aboutus'])?>
                         </li>
                         <li>
-                            <a href="#">GALLERY</a>
+                            <?= $this->Html->link(__('GALLERY'), ['controller' =>'Pages', 'action' => 'gallery'])?>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">PRODUCTS <b class="caret"></b>
@@ -108,37 +108,13 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#">BENEFITS</a></a>
+                            <?= $this->Html->link(__('BENEFITS'), ['controller' =>'Pages', 'action' => 'benefits'])?>
                         </li>
-                        
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">CONTACT US <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="blog-home-1.html">Blog Home 1</a>
-                                </li>
-                                <li>
-                                    <a href="blog-home-2.html">Blog Home 2</a>
-                                </li>
-                                <li>
-                                    <a href="blog-post.html">Blog Post</a>
-                                </li>
-                            </ul>
+                        <li>
+                            <?= $this->Html->link(__('CONTACT US'), ['controller' =>'Pages', 'action' => 'contactus'])?>
                         </li>
-
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">TESTIMONIALS<b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="blog-home-1.html">Blog Home 1</a>
-                                </li>
-                                <li>
-                                    <a href="blog-home-2.html">Blog Home 2</a>
-                                </li>
-                                <li>
-                                    <a href="blog-post.html">Blog Post</a>
-                                </li>
-                            </ul>
+                        <li>
+                            <?= $this->Html->link(__('TESTIMONIALS'), ['controller' =>'Pages', 'action' => 'testimonials'])?>
                         </li>
 
 
