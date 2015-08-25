@@ -84,7 +84,7 @@ class OrderdetailsTable extends Table
 
             ->notEmpty('OrderDetailsInstallation', 'Is Installation required?')
             -> add('OrderDetailsInstallation', 'inList', [
-                'rule' => ['inList', ['Yes', 'No']],
+                'rule' => ['inList', ['yes', 'no']],
                 'message' => 'Do you require Installation?'
                 ])
 

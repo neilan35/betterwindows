@@ -22,9 +22,14 @@ class CustomersTable extends Table
     public function initialize(array $config)
     {
         $this->table('customers');
-        $this->displayField('id');
+        $this->displayField('first_name');
         $this->primaryKey('id');
         $this->addBehavior('Timestamp');
+        $this->hasOne('Users', [
+            'foreignKey' => 'customer_id',
+            'dependent' => 'true',
+            'cascadeCallbacks' => 'true'
+        ]);
     }
 
     /**
@@ -38,28 +43,27 @@ class CustomersTable extends Table
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('id', 'create')
-
-            ->allowEmpty('first_name')
-            ->allowEmpty('last_name')
-            ->allowEmpty('phone_number')
-            ->allowEmpty('street_address')
-            ->allowEmpty('suburb')
-            ->allowEmpty('state')
-            ->allowEmpty('postcode');
+            // ->requirePresence('australian_business_number')
+            // ->notEmpty('australian_business_number')
+            // ->requirePresence('company_name')
+            // ->notEmpty('company_name')
+            ->requirePresence('first_name', 'create')
+            ->notEmpty('first_name', 'You forget to write your first name.')
+            ->requirePresence('last_name', 'create')
+            ->notEmpty('last_name','You forget to write your last name.')
+            ->add('phone_number', 'valid', ['rule' => 'numeric'])
+            ->requirePresence('phone_number', 'create')
+            ->notEmpty('phone_number','You forget to write your phone number')
+            ->requirePresence('street_address', 'create')
+            ->notEmpty('street_address')
+            ->requirePresence('suburb', 'create')
+            ->notEmpty('suburb')
+            ->requirePresence('state', 'create')
+            ->notEmpty('state')
+            ->add('postcode', 'valid', ['rule' => 'numeric'])
+            ->requirePresence('postcode', 'create')
+            ->notEmpty('postcode');
 
         return $validator;
-    }
-
-    /**
-     * Returns a rules checker object that will be used for validating
-     * application integrity.
-     *
-     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
-     * @return \Cake\ORM\RulesChecker
-     */
-    public function buildRules(RulesChecker $rules)
-    {
-        $rules->add($rules->existsIn(['user_id'], 'Users'));
-        return $rules;
     }
 }

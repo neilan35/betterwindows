@@ -2,6 +2,9 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Event\Event;
+use Cake\Network\Exception\NotFoundException;
+
 
 /**
  * Customers Controller
@@ -9,7 +12,11 @@ use App\Controller\AppController;
  * @property \App\Model\Table\CustomersTable $Customers */
 class CustomersController extends AppController
 {
-
+    public $paginate = [ 
+    'order' => [ 
+    'Customers.last_name' => 'asc' 
+    ] 
+    ]; 
     /**
      * Index method
      *
@@ -45,13 +52,14 @@ class CustomersController extends AppController
     public function add()
     {
         $customer = $this->Customers->newEntity();
-        // var_dump($customer);
-        // die();
+//        var_dump($this->request->data);
         if ($this->request->is('post')) {
+            $customer = $this->Customers->patchEntity($customer, $this->request->data, [
+                'associated' => ['Users']
+            ]);
 
-            // var_dump( $this->request->data);
-            // die();
-            $customer = $this->Customers->patchEntity($customer, $this->request->data);
+//            var_dump($customer);
+//            die();
             if ($this->Customers->save($customer)) {
                 $this->Flash->success('The customer has been saved.');
                 return $this->redirect(['action' => 'index']);
@@ -106,4 +114,63 @@ class CustomersController extends AppController
         }
         return $this->redirect(['action' => 'index']);
     }
+
+     public function register()
+    {
+        $this->layout = 'website';
+        $customer = $this->Customers->newEntity();
+//        var_dump($this->request->data);
+        if ($this->request->is('post')) {
+            $customer = $this->Customers->patchEntity($customer, $this->request->data, [
+                'associated' => ['Users']
+            ]);
+
+//            var_dump($customer);
+//            die();
+            if ($this->Customers->save($customer)) {
+                $this->Flash->success('The customer has been saved.');
+                return $this->redirect(['action' => 'index']);
+            } else {
+                $this->Flash->error('The customer could not be saved. Please, try again.');
+            }
+        }
+        $this->set(compact('customer'));
+        $this->set('_serialize', ['customer']);
+    }
+
+    public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+        // Allow users to register and logout.
+    // You should not add the "login" action to allow list. Doing so would
+    // cause problems with normal functioning of AuthComponent.
+        $this->Auth->allow(['login', 'logout' ,'forgotPassword', 'resetPassword']);
+    }
+
+    public function login()
+    {   
+        $this->layout='website';  
+        if ($this->request->is('post')) {
+        $user = $this->Auth->identify();
+        if ($user) {
+            $this->Auth->setUser($user);
+            $this->Flash->success(__('Welcome,  '));
+            return $this->redirect(['controller' => 'pages', 'action' => 'home']);
+
+        }
+        $this->Flash->error(__('Invalid email or password, please try again'));
+        }
+    }
+
+
+     public function logout()
+    {
+        $this->Flash->success('You are now logged out.');
+        return $this->redirect($this->Auth->logout());
+        // return $this -> redirect(['controller' => 'pages', 'action' => 'home']);
+    }
+
+
+
+
 }

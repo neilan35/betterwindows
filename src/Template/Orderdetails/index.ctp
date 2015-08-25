@@ -1,4 +1,11 @@
-<div id="page-wrapper">
+<div class="actions columns large-2 medium-3">
+    <h3><?= __('Actions') ?></h3>
+    <ul class="side-nav">
+        <li><?= $this->Html->link(__('New Orderdetail'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List of Users'), ['controller' => 'Users','action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('List of Customers'), ['controller' => 'Customers','action' => 'index']) ?></li>
+    </ul>
+</div>
   <h2 class="sub-header">Order Details </h2>
           <div class="table-responsive">
             <table class="table table-striped">
@@ -62,5 +69,4 @@
         </ul>
         <p><?= $this->Paginator->counter() ?></p>
     </div>
-</div>
 </div>

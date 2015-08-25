@@ -22,9 +22,15 @@ class UsersTable extends Table
     public function initialize(array $config)
     {
         $this->table('users');
-        $this->displayField('name');
+        $this->displayField('id');
         $this->primaryKey('id');
         $this->addBehavior('Timestamp');
+        $this->belongsTo('Customers', [
+            'foreignKey' => 'customer_id'
+        ]);
+        $this->belongsTo('Employees', [
+            'foreignKey' => 'employee_id'
+        ]);
     }
 
     /**
@@ -37,30 +43,26 @@ class UsersTable extends Table
     {
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
-            ->notEmpty('firstname', 'A fist name is required')
-            
-            ->notEmpty('lastname', ' A last name is required')
-            ->add('email', 'valid', ['rule' => 'email'])
-            ->notEmpty('email')
-
+            ->allowEmpty('id', 'create')
+            ->add('email', 'valid', ['rule' => 'email', 'message' => 'E-mail must be valid'])
+            ->requirePresence('email', 'create')
+            ->notEmpty('email', 'We need your email.')
+            ->requirePresence('password', 'create')
             //password validation
-            ->notEmpty('password','Please fill in the password')
+            ->notEmpty('password')
             ->add('password', ['length' => ['rule' => ['minLength',6], 'message' => 'Passwords must be at least 6 character']])
-            
-            //confirm password validation
+
+            //confirm_password validation
             ->notEmpty('confirm_password','Please fill in the password')
             ->add('confirm_password', ['length' => ['rule' => ['minLength',6], 'message' => 'Should be 6 characters']])
             ->add('confirm_password', ['compareWith' => ['rule' => ['compareWith','password'], 'message' => 'Should be match']])
 
+            ->add('customer_id', 'valid', ['rule' => 'numeric'])
+            ->allowEmpty('customer_id')
+            ->add('employee_id', 'valid', ['rule' => 'numeric'])
+            ->allowEmpty('employee_id');
 
-
-            ->notEmpty('role', 'A role is required')
-		    -> add('role', 'inList', [
-                'rule' => ['inList', ['admin', 'customer']],
-                'message' => 'Please enter a valid role'
-	       ]);
         return $validator;
-        
     }
 
     /**
@@ -73,12 +75,8 @@ class UsersTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->isUnique(['email']));
-
-
-
+        $rules->add($rules->existsIn(['customer_id'], 'Customers'));
+        $rules->add($rules->existsIn(['employee_id'], 'Employees'));
         return $rules;
     }
-
-
-
 }

@@ -1,6 +1,43 @@
-    <!-- Page Content -->
-    <div class="container">
+<div class="container">
 
+                    <div id="bw-carousel" class="carousel slide"><!-- class of slide for animation -->
+              <div class="carousel-inner">
+                <div class="item active"><!-- class of active since it's the first item -->
+                 <?php echo $this->Html->image('img1.jpg', ['alt' => 'CakePHP']); ?>
+                  <div class="carousel-caption">
+                    <p>Caption text here</p>
+                  </div>
+                </div>
+                <div class="item">
+                   <?php echo $this->Html->image('img2.jpg', ['alt' => 'CakePHP']); ?>
+                  <div class="carousel-caption">
+                    <p>Caption text here</p>
+                  </div>
+                </div>
+                <div class="item">
+                   <?php echo $this->Html->image('img3.jpg', ['alt' => 'CakePHP']); ?>
+                  <div class="carousel-caption">
+                    <p>Caption text here</p>
+                  </div>
+                </div>
+                <div class="item">
+                   <?php echo $this->Html->image('img4.jpg', ['alt' => 'CakePHP']); ?>
+                  <div class="carousel-caption">
+                    <p>Caption text here</p>
+                  </div>
+                </div>
+              </div><!-- /.carousel-inner -->
+              <!--  Next and Previous controls below
+                    href values must reference the id for this carousel -->
+                 <a class="left carousel-control" href="#bw-carousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                 <a class="right carousel-control" href="#bw-carousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div><!-- /.carousel -->
 
 
         <!-- Marketing Icons Section -->
@@ -16,7 +53,7 @@
                         <h4><i class="glyphicon glyphicon-leaf"></i> Save on energy bills by installing custom made uPVC windows for your Melbourne home</h4>
                     </div>
                     <div class="panel-body">
-                        <p>At <b>Better Windows</b>, we specialise in custom made windows and doors that are constructed from ultra-durable uPVC, giving the end products fantastic thermal and acoustic properties, and unparalleled security.</p>
+                        <p>At <b>Blue Sky Windows</b>, we specialise in custom made windows and doors that are constructed from ultra-durable uPVC, giving the end products fantastic thermal and acoustic properties, and unparalleled security.</p>
 
                         From uPVC folding windows to sliding doors, we only believe in selecting the highest quality materials for all your custom made windows and doors, ensuring you receive nothing but the best. </p>
                         <a href="#" class="btn btn-default">Learn More</a>
@@ -26,7 +63,7 @@
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="glyphicon glyphicon-lock"></i>Trust Melbourne’s Better Windows for the best custom made windows and doors</h4>
+                        <h4><i class="glyphicon glyphicon-lock"></i>Trust Melbourne’s Blue Sky Windows for the best custom made windows and doors</h4>
                     </div>
                     <div class="panel-body">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
@@ -138,3 +175,17 @@
 
     </div>
     <!-- /.container -->
+
+        <!-- jQuery -->
+        <?php echo $this->Html->script('jquery-1.11.2.min.js');?>
+
+        <!-- Bootstrap Core JavaScript -->
+        <?php echo $this->Html->script('bootstrap.min.js');?>
+        <!-- Script to Activate the Carousel -->
+        <script>
+        $(document).ready(function(){
+        $('.carousel').carousel({
+            interval: 5000 //changes the speed
+            });
+        });
+        </script>
