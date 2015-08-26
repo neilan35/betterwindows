@@ -117,7 +117,7 @@ class CustomersController extends AppController
 
      public function register()
     {
-        $this->layout = 'website';
+        $this->layout = 'custRegister';
         $customer = $this->Customers->newEntity();
 //        var_dump($this->request->data);
         if ($this->request->is('post')) {

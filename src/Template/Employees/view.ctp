@@ -1,8 +1,8 @@
-   <script>
-        $(document).ready(function(){
-            $('#tableIndex').DataTable();
-        });
-        </script>
+<script>
+    $(document).ready(function(){
+    $('#tableIndex').DataTable();
+    });
+</script>
         
 <div class="row">
     <div class="col-lg-6">
@@ -31,7 +31,6 @@
 </div>
 
     <div class="table-responsive">
-    <div class="column large-12">
     <h4 class="subheader"><?= __('Related Users') ?></h4>
     <?php if (!empty($employee->users)): ?>
     <table class="table table-hover" id="tableIndex">

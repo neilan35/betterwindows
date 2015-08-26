@@ -90,16 +90,7 @@
     
   </div>
 </div>
-    <!-- <div class="container">
-       <div id="logonav">
-        <?php echo $this->Html->image('better_windows_final.jpg', ['alt' => 'CakePHP']); ?>
-       </div>
-    </div> -->
-<!-- 
-    <div id="loginbutton" class="container" >
-        <a href="#" class="btn btn-info" id="loginbutton" role="button">Login</a>
-        <?=$this->Html->link( 'Sign Up',['controller' => 'Customers', 'action' => 'register', 'class' => 'btn btn-info' ])?>
-    </div> -->
+    
 
     <!-- Navigation -->
     <div class="navbar-wrapper">
@@ -119,81 +110,69 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active">
-
-                            <a href="#"><span class="glyphicon glyphicon-home"></span> HOME</a>
+                         <?= $this->Html->link(__('HOME'), ['controller' =>'Pages', 'action' => 'home'])?>
                         </li>
                         <li>
-                            <a href="#">ABOUT US</a>
-                        </li>   
-                        <li> 
-                            <a href="#">GALLERY</a>
+                            <?= $this->Html->link(__('ABOUT US'), ['controller' =>'Pages', 'action' => 'aboutus'])?>
+                        </li>
+                        <li>
+                            <?= $this->Html->link(__('GALLERY'), ['controller' =>'Pages', 'action' => 'gallery'])?>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">PRODUCTS <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="portfolio-1-col.html">Double Glazed Windows</a>
+                                    <?= $this->Html->link(__('Double Glazed Windows'), ['controller' =>'Pages', 'action' => 'doubleglazed'])?>
                                 </li>
                                 <li>
-                                    <a href="portfolio-2-col.html">Triple Glazed Windows</a>
+                                    <?= $this->Html->link(__('Triple Glazed Window'), ['controller' =>'Pages', 'action' => 'tripleglazed'])?>
                                 </li>
                                 <li>
-                                    <a href="portfolio-3-col.html">Awning Windows </a>
+                                    <?= $this->Html->link(__('Awning Windows'), ['controller' =>'Pages', 'action' => 'awning'])?>
                                 </li>
                                 <li>
-                                    <a href="portfolio-4-col.html">Tilt Only Windwows</a>
+                                    <?= $this->Html->link(__('Tilt Only Windwow'), ['controller' =>'Pages', 'action' => 'tilt'])?>
                                 </li>
                                 <li>
-                                    <a href="portfolio-item.html">Tilt & Turn Window & Doors</a>
+                                    <?= $this->Html->link(__('Tilt & Turn Windows & Doors'), ['controller' =>'Pages', 'action' => 'tiltturn'])?>
                                 </li>
+                                <li>
+                                    <?= $this->Html->link(__('Tilt & Slide Windows & Doors'), ['controller' =>'Pages', 'action' => 'tiltslide'])?>
+                                </li>
+                                <li>
+                                    <?= $this->Html->link(__('Bi-fold Windows & Doors'), ['controller' =>'Pages', 'action' => 'bifold'])?>
+                                </li>
+                                <li>
+                                    <?= $this->Html->link(__('French Windows & Doors'), ['controller' =>'Pages', 'action' => 'french'])?>
+                                </li>
+                                <li>
+                                    <?= $this->Html->link(__('Lift & Slide Doors'), ['controller' =>'Pages', 'action' => 'liftslide'])?>
+                                </li>
+                                <li>
+                                    <?= $this->Html->link(__('Energy Efficient Windows'), ['controller' =>'Pages', 'action' => 'energy'])?>
+                                </li>
+                                <li>
+                                    <?= $this->Html->link(__('Fire Rated Windows & Doors'), ['controller' =>'Pages', 'action' => 'firerated'])?>
+                                </li>
+                                <li>
+                                    <?= $this->Html->link(__('Fly Screens'), ['controller' =>'Pages', 'action' => 'flyscreen'])?>
+                                </li>
+                               <!--  <li>
+                                    <?= $this->Html->link(__('Colour Range'), ['controller' =>'Pages', 'action' => 'colour'])?>
+                                </li> -->
                             </ul>
                         </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">BENEFITS <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="blog-home-1.html">Blog Home 1</a>
-                                </li>
-                                <li>
-                                    <a href="blog-home-2.html">Blog Home 2</a>
-                                </li>
-                                <li>
-                                    <a href="blog-post.html">Blog Post</a>
-                                </li>
-                            </ul>
+                       <li>
+                            <?= $this->Html->link(__('BENEFITS'), ['controller' =>'Pages', 'action' => 'benefits'])?>
+                        </li>
+                        <li>
+                            <?= $this->Html->link(__('CONTACT US'), ['controller' =>'Pages', 'action' => 'contactus'])?>
+                        </li>
+                        <li>
+                            <?= $this->Html->link(__('TESTIMONIALS'), ['controller' =>'Pages', 'action' => 'testimonials'])?>
                         </li>
                         
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">CONTACT US <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="blog-home-1.html">Blog Home 1</a>
-                                </li>
-                                <li>
-                                    <a href="blog-home-2.html">Blog Home 2</a>
-                                </li>
-                                <li>
-                                    <a href="blog-post.html">Blog Post</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">TESTIMONIAL <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="blog-home-1.html">Blog Home 1</a>
-                                </li>
-                                <li>
-                                    <a href="blog-home-2.html">Blog Home 2</a>
-                                </li>
-                                <li>
-                                    <a href="blog-post.html">Blog Post</a>
-                                </li>
-                            </ul>
-                        </li>
-
 
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-list"></span> DOWNLOADS<b class="caret"></b>
@@ -226,7 +205,50 @@
     </div>
 </div>
 <!--page content-->
-    <div class="container">
+<div class="container">
+
+            <div id="bw-carousel" class="carousel slide"><!-- class of slide for animation -->
+              <div class="carousel-inner">
+                <div class="item active"><!-- class of active since it's the first item -->
+                 <?php echo $this->Html->image('img1.jpg', ['alt' => 'CakePHP']); ?>
+                  <div class="carousel-caption">
+                    <p>Caption text here</p>
+                  </div>
+                </div>
+                <div class="item">
+                   <?php echo $this->Html->image('img2.jpg', ['alt' => 'CakePHP']); ?>
+                  <div class="carousel-caption">
+                    <p>Caption text here</p>
+                  </div>
+                </div>
+                <div class="item">
+                   <?php echo $this->Html->image('img3.jpg', ['alt' => 'CakePHP']); ?>
+                  <div class="carousel-caption">
+                    <p>Caption text here</p>
+                  </div>
+                </div>
+                <div class="item">
+                   <?php echo $this->Html->image('img4.jpg', ['alt' => 'CakePHP']); ?>
+                  <div class="carousel-caption">
+                    <p>Caption text here</p>
+                  </div>
+                </div>
+              </div><!-- /.carousel-inner -->
+              <!--  Next and Previous controls below
+                    href values must reference the id for this carousel -->
+                 <a class="left carousel-control" href="#bw-carousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                 <a class="right carousel-control" href="#bw-carousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div><!-- /.carousel -->
+</div>
+
+
+    <div class="container-fluid">
     <div class="row">
 
                 <!-- Here's where I want my views to be displayed -->
@@ -241,6 +263,12 @@
 
     <!-- Page Content -->
     
-
+    <script>
+        $(document).ready(function(){
+        $('.carousel').carousel({
+            interval: 2000 //changes the speed
+            });
+        });
+        </script>
     </body>
 </html>
