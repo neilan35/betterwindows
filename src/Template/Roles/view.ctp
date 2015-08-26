@@ -36,7 +36,6 @@
             <th><?= __('Id') ?></th>
             <th><?= __('First Name') ?></th>
             <th><?= __('Last Name') ?></th>
-            <th><?= __('Role') ?></th>
             <th><?= __('Created') ?></th>
             <th><?= __('Modified') ?></th>
             <th class="actions"><?= __('Actions') ?></th>
@@ -45,8 +44,7 @@
         <tr>
             <td><?= h($employees->id) ?></td>
             <td><?= h($employees->first_name) ?></td>
-            <td><?= h($employees->last_name) ?></td>
-            <td><?= h($employees->description) ?></td>
+            <td><?= h($employees->last_name) ?></td>    
             <td><?= h($employees->created) ?></td>
             <td><?= h($employees->modified) ?></td>
 

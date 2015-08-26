@@ -47,20 +47,23 @@
                                                        'placeholder' => 'Enter Email Address',
                                                        'label' => false]);?>
                 </div>
-                <div class="form-group">
+        </div>
+        <div class="form-group">
                 <label class="control-label col-sm-2" for="user.password">Password:</label>
                 <div class="input-group col-sm-3">
                 <?php echo $this->Form->input('user.password',['class' => 'form-control',
                                                        'placeholder' => 'Enter Password',
                                                        'label' => false]);?>
                 </div>
-                <div class="form-group">
-            <label class="control-label col-sm-2" for="user.confirm_password">Confirm Password:</label>
+        </div>
+        <div class="form-group">
+                <label class="control-label col-sm-2" for="user.confirm_password">Confirm Password:</label>
                 <div class="input-group col-sm-3">
                 <?php echo $this->Form->input('user.confirm_password',['class' => 'form-control',
                                                        'placeholder' => 'Re-Enter Password',
                                                        'label' => false]);?>
                 </div>
+        </div>
     </fieldset>
     </br></br>
     <fieldset>
@@ -72,12 +75,14 @@
                                                        'placeholder' => 'Enter Street Address',
                                                        'label' => false]);?>
                 </div>
+                </div>
         <div class="form-group">
             <label class="control-label col-sm-2" for="suburb">Suburb:</label>
                 <div class="input-group col-sm-3">
                 <?php echo $this->Form->input('suburb',['class' => 'form-control',
                                                        'placeholder' => 'Enter Suburb',
                                                        'label' => false]);?>
+                </div>
                 </div>
         <div class="form-group">
             <label class="control-label col-sm-2" for="state">State:</label>
@@ -86,13 +91,15 @@
                                                        'placeholder' => 'Enter State',
                                                        'label' => false]);?>
                 </div>
+                </div>
         <div class="form-group">
             <label class="control-label col-sm-2" for="postcode">Postcode:</label>
                 <div class="input-group col-sm-3">
                 <?php echo $this->Form->input('postcode',['class' => 'form-control',
                                                        'placeholder' => 'Enter Postcode',
                                                        'label' => false]);?>
-                </div>       
+                </div>  
+              </div>     
     </fieldset>
     
     <?= $this->Form->button(__('Submit')) ?>
@@ -110,12 +117,15 @@
                                                        'placeholder' => 'Enter ABN',
                                                        'label' => false]);?>
                 </div>
+        </div>
+        <div class="form-group">
             <label class="control-label col-sm-2" for="company_name">Company Name:</label>
                 <div class="input-group col-sm-3">
                 <?php echo $this->Form->input('company_name',['class' => 'form-control',
                                                        'placeholder' => 'Enter Company Name',
                                                        'label' => false]);?>
                 </div>
+        </div>
     </fieldset>
     </br></br>
     <fieldset>
@@ -155,20 +165,23 @@
                                                        'placeholder' => 'Enter Email Address',
                                                        'label' => false]);?>
                 </div>
-                <div class="form-group">
+        </div>
+        <div class="form-group">
                 <label class="control-label col-sm-2" for="user.password">Password:</label>
                 <div class="input-group col-sm-3">
                 <?php echo $this->Form->input('user.password',['class' => 'form-control',
                                                        'placeholder' => 'Enter Password',
                                                        'label' => false]);?>
                 </div>
-                <div class="form-group">
+        </div>
+        <div class="form-group">
             <label class="control-label col-sm-2" for="user.confirm_password">Confirm Password:</label>
                 <div class="input-group col-sm-3">
                 <?php echo $this->Form->input('user.confirm_password',['class' => 'form-control',
                                                        'placeholder' => 'Re-Enter Password',
                                                        'label' => false]);?>
                 </div>
+        </div>
     </fieldset>
     </br></br>
     <fieldset>
@@ -180,6 +193,7 @@
                                                        'placeholder' => 'Enter Street Address',
                                                        'label' => false]);?>
                 </div>
+        </div>
         <div class="form-group">
             <label class="control-label col-sm-2" for="suburb">Suburb:</label>
                 <div class="input-group col-sm-3">
@@ -187,6 +201,7 @@
                                                        'placeholder' => 'Enter Suburb',
                                                        'label' => false]);?>
                 </div>
+        </div>
         <div class="form-group">
             <label class="control-label col-sm-2" for="state">State:</label>
                 <div class="input-group col-sm-3">
@@ -194,13 +209,15 @@
                                                        'placeholder' => 'Enter State',
                                                        'label' => false]);?>
                 </div>
+        </div>
         <div class="form-group">
             <label class="control-label col-sm-2" for="postcode">Postcode:</label>
                 <div class="input-group col-sm-3">
                 <?php echo $this->Form->input('postcode',['class' => 'form-control',
                                                        'placeholder' => 'Enter Postcode',
                                                        'label' => false]);?>
-                </div>       
+                </div>  
+        </div>     
     </fieldset>
 
 
