@@ -1,19 +1,36 @@
-<div id="page-wrapper">
-<h2 class="sub-header">Products</h2>
-
-<div class="table-responsive">
-    <table class="table table-striped">
+<div class="actions columns large-2 medium-3">
+    <h3><?= __('Actions') ?></h3>
+    <ul class="side-nav">
+        <li><?= $this->Html->link(__('New Product'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Colours'), ['controller' => 'Colours', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Colour'), ['controller' => 'Colours', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Balratings'), ['controller' => 'Balratings', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Balrating'), ['controller' => 'Balratings', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Itemtypes'), ['controller' => 'Itemtypes', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Itemtype'), ['controller' => 'Itemtypes', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Designs'), ['controller' => 'Designs', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Design'), ['controller' => 'Designs', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Reveals'), ['controller' => 'Reveals', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Reveal'), ['controller' => 'Reveals', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Flyscreenmeshes'), ['controller' => 'Flyscreenmeshes', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Flyscreenmesh'), ['controller' => 'Flyscreenmeshes', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Glazings'), ['controller' => 'Glazings', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Glazing'), ['controller' => 'Glazings', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Quotes'), ['controller' => 'Quotes', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Quote'), ['controller' => 'Quotes', 'action' => 'add']) ?> </li>
+    </ul>
+</div>
+<div class="products index large-10 medium-9 columns">
+    <table cellpadding="0" cellspacing="0">
     <thead>
         <tr>
-            <th><?= $this->Paginator->sort('id', 'Products ID') ?></th>
-            <th><?= $this->Paginator->sort('colour_id', 'Colour' ) ?></th>
-            <th><?= $this->Paginator->sort('glazing_id', 'Glazing') ?></th>
-            <th><?= $this->Paginator->sort('balrating_id', 'Bal Rating') ?></th>
+            <th><?= $this->Paginator->sort('id') ?></th>
+            <th><?= $this->Paginator->sort('colour_id') ?></th>
+            <th><?= $this->Paginator->sort('balrating_id') ?></th>
+            <th><?= $this->Paginator->sort('itemtype_id') ?></th>
+            <th><?= $this->Paginator->sort('design_id') ?></th>
             <th><?= $this->Paginator->sort('reveal_id') ?></th>
-            <th><?= $this->Paginator->sort('winopentype_id', 'Window Open Type') ?></th>
-            <th><?= $this->Paginator->sort('dooropentype_id', 'Door Open Type') ?></th>
-            <th><?= $this->Paginator->sort('flyscreen_id', 'Fly Screen') ?></th>
-            <th><?= $this->Paginator->sort('glasscomp_id', 'Glass Composition') ?></th>
+            <th><?= $this->Paginator->sort('flyscreenmesh_id') ?></th>
             <th class="actions"><?= __('Actions') ?></th>
         </tr>
     </thead>
@@ -25,27 +42,20 @@
                 <?= $product->has('colour') ? $this->Html->link($product->colour->name, ['controller' => 'Colours', 'action' => 'view', $product->colour->id]) : '' ?>
             </td>
             <td>
-                <?= $product->has('glazing') ? $this->Html->link($product->glazing->glazingtype, ['controller' => 'Glazings', 'action' => 'view', $product->glazing->id]) : '' ?>
+                <?= $product->has('balrating') ? $this->Html->link($product->balrating->id, ['controller' => 'Balratings', 'action' => 'view', $product->balrating->id]) : '' ?>
             </td>
             <td>
-                <?= $product->has('balrating') ? $this->Html->link($product->balrating->balrating, ['controller' => 'Balratings', 'action' => 'view', $product->balrating->id]) : '' ?>
+                <?= $product->has('itemtype') ? $this->Html->link($product->itemtype->id, ['controller' => 'Itemtypes', 'action' => 'view', $product->itemtype->id]) : '' ?>
             </td>
             <td>
-                <?= $product->has('reveal') ? $this->Html->link($product->reveal->reveal, ['controller' => 'Reveals', 'action' => 'view', $product->reveal->id]) : '' ?>
+                <?= $product->has('design') ? $this->Html->link($product->design->id, ['controller' => 'Designs', 'action' => 'view', $product->design->id]) : '' ?>
             </td>
             <td>
-                <?= $product->has('winopentype') ? $this->Html->link($product->winopentype->type, ['controller' => 'Winopentypes', 'action' => 'view', $product->winopentype->id]) : '' ?>
+                <?= $product->has('reveal') ? $this->Html->link($product->reveal->id, ['controller' => 'Reveals', 'action' => 'view', $product->reveal->id]) : '' ?>
             </td>
             <td>
-                <?= $product->has('dooropentype') ? $this->Html->link($product->dooropentype->type, ['controller' => 'Dooropentypes', 'action' => 'view', $product->dooropentype->id]) : '' ?>
+                <?= $product->has('flyscreenmesh') ? $this->Html->link($product->flyscreenmesh->id, ['controller' => 'Flyscreenmeshes', 'action' => 'view', $product->flyscreenmesh->id]) : '' ?>
             </td>
-            <td>
-                <?= $product->has('flyscreen') ? $this->Html->link($product->flyscreen->mesh, ['controller' => 'flyscreen', 'action' => 'view', $product->flyscreen->id]) : '' ?>
-            </td>
-            <td>
-                <?= $product->has('glasscomp') ? $this->Html->link($product->glasscomp->type, ['controller' => 'glasscomp', 'action' => 'view', $product->glasscomp->id]) : '' ?>
-            </td>
-
             <td class="actions">
                 <?= $this->Html->link(__('View'), ['action' => 'view', $product->id]) ?>
                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $product->id]) ?>
@@ -64,5 +74,4 @@
         </ul>
         <p><?= $this->Paginator->counter() ?></p>
     </div>
-</div>
 </div>

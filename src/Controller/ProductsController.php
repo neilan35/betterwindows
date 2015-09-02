@@ -18,7 +18,7 @@ class ProductsController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Colours', 'Glazings', 'Balratings', 'Reveals', 'Winopentypes', 'Dooropentypes', 'Flyscreens', 'Glasscomps']
+            'contain' => ['Colours', 'Balratings', 'Itemtypes', 'Designs', 'Reveals', 'Flyscreenmeshes', 'Glazings']
         ];
         $this->set('products', $this->paginate($this->Products));
         $this->set('_serialize', ['products']);
@@ -34,7 +34,7 @@ class ProductsController extends AppController
     public function view($id = null)
     {
         $product = $this->Products->get($id, [
-            'contain' => ['Colours', 'Glazings', 'Balratings', 'Reveals', 'Winopentypes', 'Dooropentypes', 'Flyscreens', 'Glasscomps']
+            'contain' => ['Colours', 'Balratings', 'Itemtypes', 'Designs', 'Reveals', 'Flyscreenmeshes', 'Glazings', 'Quotes']
         ]);
         $this->set('product', $product);
         $this->set('_serialize', ['product']);
@@ -58,14 +58,13 @@ class ProductsController extends AppController
             }
         }
         $colours = $this->Products->Colours->find('list', ['limit' => 200]);
-        $glazings = $this->Products->Glazings->find('list', ['limit' => 200]);
         $balratings = $this->Products->Balratings->find('list', ['limit' => 200]);
+        $itemtypes = $this->Products->Itemtypes->find('list', ['limit' => 200]);
+        $designs = $this->Products->Designs->find('list', ['limit' => 200]);
         $reveals = $this->Products->Reveals->find('list', ['limit' => 200]);
-        $winopentypes = $this->Products->Winopentypes->find('list', ['limit' => 200]);
-        $dooropentypes = $this->Products->Dooropentypes->find('list', ['limit' => 200]);
-        $flyscreens = $this->Products->Flyscreens->find('list', ['limit' => 200]);
-        $glasscomps = $this->Products->Glasscomps->find('list', ['limit' => 200]);
-        $this->set(compact('product', 'colours', 'glazings', 'balratings', 'reveals', 'winopentypes', 'dooropentypes', 'flyscreens', 'glasscomps'));
+        $flyscreenmeshes = $this->Products->Flyscreenmeshes->find('list', ['limit' => 200]);
+        $glazings = $this->Products->Glazings->find('list', ['limit' => 200]);
+        $this->set(compact('product', 'colours', 'balratings', 'itemtypes', 'designs', 'reveals', 'flyscreenmeshes', 'glazings'));
         $this->set('_serialize', ['product']);
     }
 
@@ -91,14 +90,13 @@ class ProductsController extends AppController
             }
         }
         $colours = $this->Products->Colours->find('list', ['limit' => 200]);
-        $glazings = $this->Products->Glazings->find('list', ['limit' => 200]);
         $balratings = $this->Products->Balratings->find('list', ['limit' => 200]);
+        $itemtypes = $this->Products->Itemtypes->find('list', ['limit' => 200]);
+        $designs = $this->Products->Designs->find('list', ['limit' => 200]);
         $reveals = $this->Products->Reveals->find('list', ['limit' => 200]);
-        $winopentypes = $this->Products->Winopentypes->find('list', ['limit' => 200]);
-        $dooropentypes = $this->Products->Dooropentypes->find('list', ['limit' => 200]);
-        $flyscreens = $this->Products->Flyscreens->find('list', ['limit' => 200]);
-        $glasscomps = $this->Products->Glasscomps->find('list', ['limit' => 200]);
-        $this->set(compact('product', 'colours', 'glazings', 'balratings', 'reveals', 'winopentypes', 'dooropentypes', 'flyscreens', 'glasscomps'));
+        $flyscreenmeshes = $this->Products->Flyscreenmeshes->find('list', ['limit' => 200]);
+        $glazings = $this->Products->Glazings->find('list', ['limit' => 200]);
+        $this->set(compact('product', 'colours', 'balratings', 'itemtypes', 'designs', 'reveals', 'flyscreenmeshes', 'glazings'));
         $this->set('_serialize', ['product']);
     }
 

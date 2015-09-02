@@ -1,14 +1,21 @@
-<div id="page-wrapper">
-<h2 class="sub-header">Bal Ratings</h2>
-
-
-<div class="table-responsive">
-    <table class="table table-striped">
+<div class="actions columns large-2 medium-3">
+    <h3><?= __('Actions') ?></h3>
+    <ul class="side-nav">
+        <li><?= $this->Html->link(__('New Balrating'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Flyscreenmeshes'), ['controller' => 'Flyscreenmeshes', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Flyscreenmesh'), ['controller' => 'Flyscreenmeshes', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Glazings'), ['controller' => 'Glazings', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Glazing'), ['controller' => 'Glazings', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Products'), ['controller' => 'Products', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Product'), ['controller' => 'Products', 'action' => 'add']) ?> </li>
+    </ul>
+</div>
+<div class="balratings index large-10 medium-9 columns">
+    <table cellpadding="0" cellspacing="0">
     <thead>
         <tr>
-            <th><?= $this->Paginator->sort('id', 'ID') ?></th>
-            <th><?= $this->Paginator->sort('balrating', 'Bal Rating') ?></th>
-            <th><?= $this->Paginator->sort('price', 'Price') ?></th>
+            <th><?= $this->Paginator->sort('id') ?></th>
+            <th><?= $this->Paginator->sort('balrating') ?></th>
             <th class="actions"><?= __('Actions') ?></th>
         </tr>
     </thead>
@@ -16,8 +23,7 @@
     <?php foreach ($balratings as $balrating): ?>
         <tr>
             <td><?= $this->Number->format($balrating->id) ?></td>
-            <td><?= $this->Number->format($balrating->balrating) ?></td>
-            <td><?= $this->Number->format($balrating->price) ?></td>
+            <td><?= h($balrating->balrating) ?></td>
             <td class="actions">
                 <?= $this->Html->link(__('View'), ['action' => 'view', $balrating->id]) ?>
                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $balrating->id]) ?>
@@ -36,5 +42,4 @@
         </ul>
         <p><?= $this->Paginator->counter() ?></p>
     </div>
-</div>
 </div>

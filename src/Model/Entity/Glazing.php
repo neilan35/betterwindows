@@ -15,10 +15,17 @@ class Glazing extends Entity
      * @var array
      */
     protected $_accessible = [
-        'glazingtype' => true,
+        'usage_id' => true,
+        'glasstype_id' => true,
+        'composition_id' => true,
+        'balrating_id' => true,
         'obscurity' => true,
-        'safetyglazing' => true,
+        'safety' => true,
         'price' => true,
+        'usage' => true,
+        'glasstype' => true,
+        'composition' => true,
+        'balrating' => true,
         'products' => true,
     ];
 }

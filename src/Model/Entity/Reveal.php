@@ -15,8 +15,7 @@ class Reveal extends Entity
      * @var array
      */
     protected $_accessible = [
-        'reveal' => true,
-        'revealsize' => true,
+        'type' => true,
         'price' => true,
         'products' => true,
     ];

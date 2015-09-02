@@ -1,41 +1,43 @@
-<script>
-    $(document).ready(function(){
-    $('#tableIndex').DataTable();
-    });
-</script>
-
-<div class="row">
-    <div class="col-lg-6">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                View Roles
-            </div>
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <h4 class="subheader"><?= __('Role Id') ?></h4>
-                        <p><?= h($role->id) ?></p>
-                        <h4 class="subheader"><?= __('Description') ?></h4>
-                        <p><?= h($role->description) ?></p>
-                        <h4 class="subheader"><?= __('Created') ?></h4>
-                        <p><?= h($role->created) ?></p>
-                        <h4 class="subheader"><?= __('Modified') ?></h4>
-                        <p><?= h($role->modified) ?></p>
-                    </div>
-                </div>
-            </div>
+<div class="actions columns large-2 medium-3">
+    <h3><?= __('Actions') ?></h3>
+    <ul class="side-nav">
+        <li><?= $this->Html->link(__('Edit Role'), ['action' => 'edit', $role->id]) ?> </li>
+        <li><?= $this->Form->postLink(__('Delete Role'), ['action' => 'delete', $role->id], ['confirm' => __('Are you sure you want to delete # {0}?', $role->id)]) ?> </li>
+        <li><?= $this->Html->link(__('List Roles'), ['action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Role'), ['action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Employees'), ['controller' => 'Employees', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Employee'), ['controller' => 'Employees', 'action' => 'add']) ?> </li>
+    </ul>
+</div>
+<div class="roles view large-10 medium-9 columns">
+    <h2><?= h($role->id) ?></h2>
+    <div class="row">
+        <div class="large-5 columns strings">
+            <h6 class="subheader"><?= __('Description') ?></h6>
+            <p><?= h($role->description) ?></p>
+        </div>
+        <div class="large-2 columns numbers end">
+            <h6 class="subheader"><?= __('Id') ?></h6>
+            <p><?= $this->Number->format($role->id) ?></p>
+        </div>
+        <div class="large-2 columns dates end">
+            <h6 class="subheader"><?= __('Created') ?></h6>
+            <p><?= h($role->created) ?></p>
+            <h6 class="subheader"><?= __('Modified') ?></h6>
+            <p><?= h($role->modified) ?></p>
         </div>
     </div>
 </div>
-
-<div class="table-responsive">
-<h4 class="subheader"><?= __('Related Employees') ?></h4>
+<div class="related row">
+    <div class="column large-12">
+    <h4 class="subheader"><?= __('Related Employees') ?></h4>
     <?php if (!empty($role->employees)): ?>
-     <table class="table table-hover" id="tableIndex">
+    <table cellpadding="0" cellspacing="0">
         <tr>
             <th><?= __('Id') ?></th>
             <th><?= __('First Name') ?></th>
             <th><?= __('Last Name') ?></th>
+            <th><?= __('Role') ?></th>
             <th><?= __('Created') ?></th>
             <th><?= __('Modified') ?></th>
             <th class="actions"><?= __('Actions') ?></th>
@@ -44,7 +46,8 @@
         <tr>
             <td><?= h($employees->id) ?></td>
             <td><?= h($employees->first_name) ?></td>
-            <td><?= h($employees->last_name) ?></td>    
+            <td><?= h($employees->last_name) ?></td>
+            <td><?= h($employees->description) ?></td>
             <td><?= h($employees->created) ?></td>
             <td><?= h($employees->modified) ?></td>
 

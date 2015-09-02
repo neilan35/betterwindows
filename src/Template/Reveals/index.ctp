@@ -1,14 +1,18 @@
-<div id="page-wrapper">
-<h2 class="sub-header">Reveals</h2>
-
-<div class="table-responsive">
-    <table class="table table-striped">
+<div class="actions columns large-2 medium-3">
+    <h3><?= __('Actions') ?></h3>
+    <ul class="side-nav">
+        <li><?= $this->Html->link(__('New Reveal'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Products'), ['controller' => 'Products', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Product'), ['controller' => 'Products', 'action' => 'add']) ?> </li>
+    </ul>
+</div>
+<div class="reveals index large-10 medium-9 columns">
+    <table cellpadding="0" cellspacing="0">
     <thead>
         <tr>
-            <th><?= $this->Paginator->sort('id', 'ID') ?></th>
-            <th><?= $this->Paginator->sort('reveal', 'Reveal') ?></th>
-            <th><?= $this->Paginator->sort('revealsize', 'Reveal Size') ?></th>
-            <th><?= $this->Paginator->sort('price', 'Price') ?></th>
+            <th><?= $this->Paginator->sort('id') ?></th>
+            <th><?= $this->Paginator->sort('type') ?></th>
+            <th><?= $this->Paginator->sort('price') ?></th>
             <th class="actions"><?= __('Actions') ?></th>
         </tr>
     </thead>
@@ -16,8 +20,7 @@
     <?php foreach ($reveals as $reveal): ?>
         <tr>
             <td><?= $this->Number->format($reveal->id) ?></td>
-            <td><?= h($reveal->reveal) ?></td>
-            <td><?= $this->Number->format($reveal->revealsize) ?></td>
+            <td><?= h($reveal->type) ?></td>
             <td><?= $this->Number->format($reveal->price) ?></td>
             <td class="actions">
                 <?= $this->Html->link(__('View'), ['action' => 'view', $reveal->id]) ?>
@@ -37,5 +40,4 @@
         </ul>
         <p><?= $this->Paginator->counter() ?></p>
     </div>
-</div>
 </div>

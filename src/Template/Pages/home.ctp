@@ -12,7 +12,7 @@
                         <h4><i class="glyphicon glyphicon-leaf"></i> Save on energy bills by installing custom made uPVC windows for your Melbourne home</h4>
                     </div>
                     <div class="panel-body">
-                        <p>At <b>Better Windows</b>, we specialise in custom made windows and doors that are constructed from ultra-durable uPVC, giving the end products fantastic thermal and acoustic properties, and unparalleled security.</p>
+                        <p>At <b>Blue Sky Windows</b>, we specialise in custom made windows and doors that are constructed from ultra-durable uPVC, giving the end products fantastic thermal and acoustic properties, and unparalleled security.</p>
 
                         From uPVC folding windows to sliding doors, we only believe in selecting the highest quality materials for all your custom made windows and doors, ensuring you receive nothing but the best. </p>
                         <a href="#" class="btn btn-default">Learn More</a>
@@ -22,7 +22,7 @@
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="glyphicon glyphicon-lock"></i>Trust Melbourne’s Better Windows for the best custom made windows and doors</h4>
+                        <h4><i class="glyphicon glyphicon-lock"></i>Trust Melbourne’s Blue Sky Windows for the best custom made windows and doors</h4>
                     </div>
                     <div class="panel-body">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>

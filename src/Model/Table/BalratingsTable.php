@@ -22,8 +22,14 @@ class BalratingsTable extends Table
     public function initialize(array $config)
     {
         $this->table('balratings');
-        $this->displayField('balrating');
+        $this->displayField('id');
         $this->primaryKey('id');
+        $this->hasMany('Flyscreenmeshes', [
+            'foreignKey' => 'balrating_id'
+        ]);
+        $this->hasMany('Glazings', [
+            'foreignKey' => 'balrating_id'
+        ]);
         $this->hasMany('Products', [
             'foreignKey' => 'balrating_id'
         ]);
@@ -39,11 +45,8 @@ class BalratingsTable extends Table
     {
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
-            ->notEmpty('id', 'create')
-            ->add('balrating', 'valid', ['rule' => 'numeric'])
-            ->notEmpty('balrating')
-            ->add('price', 'valid', ['rule' => 'numeric'])
-            ->notEmpty('price');
+            ->allowEmpty('id', 'create')
+            ->allowEmpty('balrating');
 
         return $validator;
     }

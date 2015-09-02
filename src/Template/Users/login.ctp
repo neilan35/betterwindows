@@ -6,7 +6,7 @@
         <div >
             <section class="container">
         <section class="row">
-            <div class="col-xs-12">
+            <div class="col-xs-12 col-sm-6 left">
                 <form method="post" action="#" role="login">
                     <img src="../img/logo.png" alt="" class="img-responsive" />
                   
@@ -15,6 +15,9 @@
                 <input type="text" name="email" placeholder="Enter e-mail" required class="form-control" />
                        
                     </div>
+                   
+                    
+                   
                     <div class="input-group">
                         <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
                         <input type="password" name="password" placeholder="Enter password" required class="form-control" />
@@ -33,8 +36,13 @@
                     </section>
                 </form>
             </div>
+            <div class="hidden-xs col-sm-6 right">
+                <img src="../img/robo.jpg" class="img-responsive" alt="" />
+            </div>
         </section>
     </section>
+
+    
 
         </div>
     </div>

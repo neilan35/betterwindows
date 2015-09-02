@@ -1,4 +1,3 @@
-<div id="page-wrapper">
 <div class="actions columns large-2 medium-3">
     <h3><?= __('Actions') ?></h3>
     <ul class="side-nav">
@@ -18,12 +17,10 @@
     <fieldset>
         <legend><?= __('Edit Reveal') ?></legend>
         <?php
-            echo $this->Form->input('reveal');
-            echo $this->Form->input('revealsize');
+            echo $this->Form->input('type');
             echo $this->Form->input('price');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
-</div>
 </div>

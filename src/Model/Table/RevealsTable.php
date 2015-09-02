@@ -22,7 +22,7 @@ class RevealsTable extends Table
     public function initialize(array $config)
     {
         $this->table('reveals');
-        $this->displayField('revealsize');
+        $this->displayField('id');
         $this->primaryKey('id');
         $this->hasMany('Products', [
             'foreignKey' => 'reveal_id'
@@ -39,11 +39,10 @@ class RevealsTable extends Table
     {
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
-            ->notEmpty('id', 'create')
-            ->notEmpty('reveal', 'Please enter a reveal')
-            ->notEmpty('revealsize', 'Please enter a reveal')
-            ->add('price', 'valid', ['rule' => 'numeric'])
-            ->notEmpty('price', 'Please enter a price');
+            ->allowEmpty('id', 'create')
+            ->allowEmpty('type')
+            ->add('price', 'valid', ['rule' => 'decimal'])
+            ->allowEmpty('price');
 
         return $validator;
     }

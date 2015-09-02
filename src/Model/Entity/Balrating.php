@@ -16,7 +16,8 @@ class Balrating extends Entity
      */
     protected $_accessible = [
         'balrating' => true,
-        'price' => true,
+        'flyscreenmeshes' => true,
+        'glazings' => true,
         'products' => true,
     ];
 }

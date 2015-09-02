@@ -17,6 +17,9 @@ class GlazingsController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'contain' => ['Usages', 'Glasstypes', 'Compositions', 'Balratings']
+        ];
         $this->set('glazings', $this->paginate($this->Glazings));
         $this->set('_serialize', ['glazings']);
     }
@@ -31,7 +34,7 @@ class GlazingsController extends AppController
     public function view($id = null)
     {
         $glazing = $this->Glazings->get($id, [
-            'contain' => ['Products']
+            'contain' => ['Usages', 'Glasstypes', 'Compositions', 'Balratings', 'Products']
         ]);
         $this->set('glazing', $glazing);
         $this->set('_serialize', ['glazing']);
@@ -54,7 +57,11 @@ class GlazingsController extends AppController
                 $this->Flash->error('The glazing could not be saved. Please, try again.');
             }
         }
-        $this->set(compact('glazing'));
+        $usages = $this->Glazings->Usages->find('list', ['limit' => 200]);
+        $glasstypes = $this->Glazings->Glasstypes->find('list', ['limit' => 200]);
+        $compositions = $this->Glazings->Compositions->find('list', ['limit' => 200]);
+        $balratings = $this->Glazings->Balratings->find('list', ['limit' => 200]);
+        $this->set(compact('glazing', 'usages', 'glasstypes', 'compositions', 'balratings'));
         $this->set('_serialize', ['glazing']);
     }
 
@@ -79,7 +86,11 @@ class GlazingsController extends AppController
                 $this->Flash->error('The glazing could not be saved. Please, try again.');
             }
         }
-        $this->set(compact('glazing'));
+        $usages = $this->Glazings->Usages->find('list', ['limit' => 200]);
+        $glasstypes = $this->Glazings->Glasstypes->find('list', ['limit' => 200]);
+        $compositions = $this->Glazings->Compositions->find('list', ['limit' => 200]);
+        $balratings = $this->Glazings->Balratings->find('list', ['limit' => 200]);
+        $this->set(compact('glazing', 'usages', 'glasstypes', 'compositions', 'balratings'));
         $this->set('_serialize', ['glazing']);
     }
 
