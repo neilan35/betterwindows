@@ -24,6 +24,9 @@ class ColoursTable extends Table
         $this->table('colours');
         $this->displayField('name');
         $this->primaryKey('id');
+        $this->belongsTo('Categories', [
+            'foreignKey' => 'category_id'
+        ]);
         $this->hasMany('Products', [
             'foreignKey' => 'colour_id'
         ]);
@@ -39,13 +42,24 @@ class ColoursTable extends Table
     {
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
-            ->notEmpty('id', 'create')
-            ->add('category', 'valid', ['rule' => 'numeric'])
-            ->allowEmpty('category')
-            ->allowEmpty('name')
-            ->add('price', 'valid', ['rule' => 'numeric'])
-            ->allowEmpty('price');
+            ->allowEmpty('id', 'create')
+            ->add('category_id', 'valid', ['rule' => 'numeric'])
+            ->allowEmpty('category_id')
+            ->allowEmpty('name');
 
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->existsIn(['category_id'], 'Categories'));
+        return $rules;
     }
 }

@@ -51,16 +51,27 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?php echo $this->Html->css('font-awesome.min.css');?>
 
     <!-- JS -->
+    
     <?php echo $this->Html->script('jquery.min.js');?>
     <?php echo $this->Html->script('bootstrap.min.js');?>
+    <?php echo $this->Html->script('bootstrap-combobox.js');?>
     <?php echo $this->Html->script('sb-admin-2.js');?>
     <?php echo $this->Html->script('metisMenu.min.js');?>
     <?php echo $this->Html->script('jquery.dataTables.min.js');?>
+
+    
     
 
      <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
+
+    <script type="text/javascript">
+  $(document).ready(function(){
+    $('.combobox').combobox();
+  });
+</script>
+
 </head>
 <body>
   <div id="wrapper">

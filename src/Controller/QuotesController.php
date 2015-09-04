@@ -18,7 +18,7 @@ class QuotesController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Customers', 'Products']
+            'contain' => ['Products', 'Customers']
         ];
         $this->set('quotes', $this->paginate($this->Quotes));
         $this->set('_serialize', ['quotes']);
@@ -34,7 +34,7 @@ class QuotesController extends AppController
     public function view($id = null)
     {
         $quote = $this->Quotes->get($id, [
-            'contain' => ['Customers', 'Products']
+            'contain' => ['Products', 'Customers']
         ]);
         $this->set('quote', $quote);
         $this->set('_serialize', ['quote']);
@@ -57,9 +57,9 @@ class QuotesController extends AppController
                 $this->Flash->error('The quote could not be saved. Please, try again.');
             }
         }
-        $customers = $this->Quotes->Customers->find('list', ['limit' => 200]);
         $products = $this->Quotes->Products->find('list', ['limit' => 200]);
-        $this->set(compact('quote', 'customers', 'products'));
+        $customers = $this->Quotes->Customers->find('list', ['limit' => 200]);
+        $this->set(compact('quote', 'products', 'customers'));
         $this->set('_serialize', ['quote']);
     }
 
@@ -84,9 +84,9 @@ class QuotesController extends AppController
                 $this->Flash->error('The quote could not be saved. Please, try again.');
             }
         }
-        $customers = $this->Quotes->Customers->find('list', ['limit' => 200]);
         $products = $this->Quotes->Products->find('list', ['limit' => 200]);
-        $this->set(compact('quote', 'customers', 'products'));
+        $customers = $this->Quotes->Customers->find('list', ['limit' => 200]);
+        $this->set(compact('quote', 'products', 'customers'));
         $this->set('_serialize', ['quote']);
     }
 

@@ -40,7 +40,7 @@ class UsagesTable extends Table
         $validator
             ->add('id', 'valid', ['rule' => 'numeric'])
             ->allowEmpty('id', 'create')
-            ->allowEmpty('efficiency');
+            ->allowEmpty('description');
 
         return $validator;
     }

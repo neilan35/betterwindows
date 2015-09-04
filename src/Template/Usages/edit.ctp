@@ -17,7 +17,7 @@
     <fieldset>
         <legend><?= __('Edit Usage') ?></legend>
         <?php
-            echo $this->Form->input('efficiency');
+            echo $this->Form->input('description');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

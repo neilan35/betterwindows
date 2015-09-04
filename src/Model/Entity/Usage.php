@@ -15,7 +15,7 @@ class Usage extends Entity
      * @var array
      */
     protected $_accessible = [
-        'efficiency' => true,
+        'description' => true,
         'glazings' => true,
     ];
 }

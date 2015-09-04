@@ -45,7 +45,7 @@
                 <?= $product->has('balrating') ? $this->Html->link($product->balrating->id, ['controller' => 'Balratings', 'action' => 'view', $product->balrating->id]) : '' ?>
             </td>
             <td>
-                <?= $product->has('itemtype') ? $this->Html->link($product->itemtype->id, ['controller' => 'Itemtypes', 'action' => 'view', $product->itemtype->id]) : '' ?>
+                <?= $product->has('itemtype') ? $this->Html->link($product->itemtype->type, ['controller' => 'Itemtypes', 'action' => 'view', $product->itemtype->id]) : '' ?>
             </td>
             <td>
                 <?= $product->has('design') ? $this->Html->link($product->design->id, ['controller' => 'Designs', 'action' => 'view', $product->design->id]) : '' ?>

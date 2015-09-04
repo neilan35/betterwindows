@@ -15,9 +15,9 @@ class Colour extends Entity
      * @var array
      */
     protected $_accessible = [
-        'category' => true,
+        'category_id' => true,
         'name' => true,
-        'price' => true,
+        'category' => true,
         'products' => true,
     ];
 }

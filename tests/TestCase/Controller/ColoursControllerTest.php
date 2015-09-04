@@ -17,6 +17,7 @@ class ColoursControllerTest extends IntegrationTestCase
      */
     public $fixtures = [
         'Colours' => 'app.colours',
+        'Categories' => 'app.categories',
         'Products' => 'app.products'
     ];
 

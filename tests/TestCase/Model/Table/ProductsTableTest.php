@@ -19,13 +19,22 @@ class ProductsTableTest extends TestCase
     public $fixtures = [
         'Products' => 'app.products',
         'Colours' => 'app.colours',
-        'Glazings' => 'app.glazings',
+        'Categories' => 'app.categories',
         'Balratings' => 'app.balratings',
+        'Flyscreenmeshes' => 'app.flyscreenmeshes',
+        'Meshtypes' => 'app.meshtypes',
+        'Flyscreenopentypes' => 'app.flyscreenopentypes',
+        'Opentypes' => 'app.opentypes',
+        'Itemtypes' => 'app.itemtypes',
+        'Designs' => 'app.designs',
+        'Pictures' => 'app.pictures',
+        'Flyscreentypes' => 'app.flyscreentypes',
+        'Glazings' => 'app.glazings',
+        'Usages' => 'app.usages',
+        'Glasstypes' => 'app.glasstypes',
+        'Compositions' => 'app.compositions',
         'Reveals' => 'app.reveals',
-        'Winopentypes' => 'app.winopentypes',
-        'Dooropentypes' => 'app.dooropentypes',
-        'Flyscreens' => 'app.flyscreens',
-        'Glasscomps' => 'app.glasscomps'
+        'Quotes' => 'app.quotes'
     ];
 
     /**

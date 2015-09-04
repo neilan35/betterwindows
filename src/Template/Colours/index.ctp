@@ -1,14 +1,20 @@
-<div id="page-wrapper">
-<h2 class="sub-header">Colours</h2>
-
-<div class="table-responsive">
-    <table class="table table-striped">
-              <thead>
-                <tr>
-            <th><?= $this->Paginator->sort('id','ID') ?></th>
-            <th><?= $this->Paginator->sort('category', 'Colour Category') ?></th>
-            <th><?= $this->Paginator->sort('name', 'Colour Name') ?></th>
-            <th><?= $this->Paginator->sort('price', 'Price') ?></th>
+<div class="actions columns large-2 medium-3">
+    <h3><?= __('Actions') ?></h3>
+    <ul class="side-nav">
+        <li><?= $this->Html->link(__('New Colour'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Categories'), ['controller' => 'Categories', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Category'), ['controller' => 'Categories', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Products'), ['controller' => 'Products', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Product'), ['controller' => 'Products', 'action' => 'add']) ?> </li>
+    </ul>
+</div>
+<div class="colours index large-10 medium-9 columns">
+    <table cellpadding="0" cellspacing="0">
+    <thead>
+        <tr>
+            <th><?= $this->Paginator->sort('id') ?></th>
+            <th><?= $this->Paginator->sort('category_id') ?></th>
+            <th><?= $this->Paginator->sort('name') ?></th>
             <th class="actions"><?= __('Actions') ?></th>
         </tr>
     </thead>
@@ -16,10 +22,10 @@
     <?php foreach ($colours as $colour): ?>
         <tr>
             <td><?= $this->Number->format($colour->id) ?></td>
-            <td><?= $this->Number->format($colour->category) ?></td>
+            <td>
+                <?= $colour->has('category') ? $this->Html->link($colour->category->id, ['controller' => 'Categories', 'action' => 'view', $colour->category->id]) : '' ?>
+            </td>
             <td><?= h($colour->name) ?></td>
-            <td><?= $this->Number->format($colour->price) ?></td>
-           
             <td class="actions">
                 <?= $this->Html->link(__('View'), ['action' => 'view', $colour->id]) ?>
                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $colour->id]) ?>
@@ -38,5 +44,4 @@
         </ul>
         <p><?= $this->Paginator->counter() ?></p>
     </div>
-</div>
 </div>

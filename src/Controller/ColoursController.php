@@ -17,6 +17,9 @@ class ColoursController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'contain' => ['Categories']
+        ];
         $this->set('colours', $this->paginate($this->Colours));
         $this->set('_serialize', ['colours']);
     }
@@ -31,7 +34,7 @@ class ColoursController extends AppController
     public function view($id = null)
     {
         $colour = $this->Colours->get($id, [
-            'contain' => ['Products']
+            'contain' => ['Categories', 'Products']
         ]);
         $this->set('colour', $colour);
         $this->set('_serialize', ['colour']);
@@ -54,7 +57,8 @@ class ColoursController extends AppController
                 $this->Flash->error('The colour could not be saved. Please, try again.');
             }
         }
-        $this->set(compact('colour'));
+        $categories = $this->Colours->Categories->find('list', ['limit' => 200]);
+        $this->set(compact('colour', 'categories'));
         $this->set('_serialize', ['colour']);
     }
 
@@ -79,7 +83,8 @@ class ColoursController extends AppController
                 $this->Flash->error('The colour could not be saved. Please, try again.');
             }
         }
-        $this->set(compact('colour'));
+        $categories = $this->Colours->Categories->find('list', ['limit' => 200]);
+        $this->set(compact('colour', 'categories'));
         $this->set('_serialize', ['colour']);
     }
 

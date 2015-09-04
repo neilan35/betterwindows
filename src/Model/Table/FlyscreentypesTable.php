@@ -22,7 +22,7 @@ class FlyscreentypesTable extends Table
     public function initialize(array $config)
     {
         $this->table('flyscreentypes');
-        $this->displayField('id');
+        $this->displayField('type');
         $this->primaryKey('id');
         $this->hasMany('Flyscreenopentypes', [
             'foreignKey' => 'flyscreentype_id'

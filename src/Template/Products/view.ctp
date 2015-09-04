@@ -32,7 +32,7 @@
             <h6 class="subheader"><?= __('Balrating') ?></h6>
             <p><?= $product->has('balrating') ? $this->Html->link($product->balrating->id, ['controller' => 'Balratings', 'action' => 'view', $product->balrating->id]) : '' ?></p>
             <h6 class="subheader"><?= __('Itemtype') ?></h6>
-            <p><?= $product->has('itemtype') ? $this->Html->link($product->itemtype->id, ['controller' => 'Itemtypes', 'action' => 'view', $product->itemtype->id]) : '' ?></p>
+            <p><?= $product->has('itemtype') ? $this->Html->link($product->itemtype->type, ['controller' => 'Itemtypes', 'action' => 'view', $product->itemtype->id]) : '' ?></p>
             <h6 class="subheader"><?= __('Design') ?></h6>
             <p><?= $product->has('design') ? $this->Html->link($product->design->id, ['controller' => 'Designs', 'action' => 'view', $product->design->id]) : '' ?></p>
             <h6 class="subheader"><?= __('Reveal') ?></h6>
@@ -59,31 +59,33 @@
     <table cellpadding="0" cellspacing="0">
         <tr>
             <th><?= __('Id') ?></th>
-            <th><?= __('Customer Id') ?></th>
             <th><?= __('Product Id') ?></th>
-            <th><?= __('Quote No') ?></th>
+            <th><?= __('Customer Id') ?></th>
+            <th><?= __('Quoteno') ?></th>
             <th><?= __('Item') ?></th>
-            <th><?= __('Unit Cost') ?></th>
+            <th><?= __('Unitcost') ?></th>
             <th><?= __('Quantity') ?></th>
             <th><?= __('Installation') ?></th>
             <th><?= __('Installtype') ?></th>
             <th><?= __('Delivery') ?></th>
             <th><?= __('Deliverytype') ?></th>
+            <th><?= __('Status') ?></th>
             <th class="actions"><?= __('Actions') ?></th>
         </tr>
         <?php foreach ($product->quotes as $quotes): ?>
         <tr>
             <td><?= h($quotes->id) ?></td>
-            <td><?= h($quotes->customer_id) ?></td>
             <td><?= h($quotes->product_id) ?></td>
-            <td><?= h($quotes->quote_no) ?></td>
+            <td><?= h($quotes->customer_id) ?></td>
+            <td><?= h($quotes->quoteno) ?></td>
             <td><?= h($quotes->item) ?></td>
-            <td><?= h($quotes->unit_cost) ?></td>
+            <td><?= h($quotes->unitcost) ?></td>
             <td><?= h($quotes->quantity) ?></td>
             <td><?= h($quotes->installation) ?></td>
             <td><?= h($quotes->installtype) ?></td>
             <td><?= h($quotes->delivery) ?></td>
             <td><?= h($quotes->deliverytype) ?></td>
+            <td><?= h($quotes->status) ?></td>
 
             <td class="actions">
                 <?= $this->Html->link(__('View'), ['controller' => 'Quotes', 'action' => 'view', $quotes->id]) ?>

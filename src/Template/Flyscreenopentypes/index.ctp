@@ -1,3 +1,9 @@
+<script>
+        $(document).ready(function(){
+            $('#tableIndex').DataTable();
+        });
+</script>
+
 <div class="actions columns large-2 medium-3">
     <h3><?= __('Actions') ?></h3>
     <ul class="side-nav">
@@ -10,8 +16,9 @@
         <li><?= $this->Html->link(__('New Flyscreenmesh'), ['controller' => 'Flyscreenmeshes', 'action' => 'add']) ?> </li>
     </ul>
 </div>
-<div class="flyscreenopentypes index large-10 medium-9 columns">
-    <table cellpadding="0" cellspacing="0">
+
+<div class="table-responsive">
+    <table class="table table-hover" id="tableIndex">
     <thead>
         <tr>
             <th><?= $this->Paginator->sort('id') ?></th>
@@ -28,7 +35,7 @@
                 <?= $flyscreenopentype->has('opentype') ? $this->Html->link($flyscreenopentype->opentype->name, ['controller' => 'Opentypes', 'action' => 'view', $flyscreenopentype->opentype->id]) : '' ?>
             </td>
             <td>
-                <?= $flyscreenopentype->has('flyscreentype') ? $this->Html->link($flyscreenopentype->flyscreentype->id, ['controller' => 'Flyscreentypes', 'action' => 'view', $flyscreenopentype->flyscreentype->id]) : '' ?>
+                <?= $flyscreenopentype->has('flyscreentype') ? $this->Html->link($flyscreenopentype->flyscreentype->type, ['controller' => 'Flyscreentypes', 'action' => 'view', $flyscreenopentype->flyscreentype->id]) : '' ?>
             </td>
             <td class="actions">
                 <?= $this->Html->link(__('View'), ['action' => 'view', $flyscreenopentype->id]) ?>

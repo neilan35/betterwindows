@@ -15,17 +15,18 @@ class Quote extends Entity
      * @var array
      */
     protected $_accessible = [
-        'customer_id' => true,
         'product_id' => true,
-        'quote_no' => true,
+        'customer_id' => true,
+        'quoteno' => true,
         'item' => true,
-        'unit_cost' => true,
+        'unitcost' => true,
         'quantity' => true,
         'installation' => true,
         'installtype' => true,
         'delivery' => true,
         'deliverytype' => true,
-        'customer' => true,
+        'status' => true,
         'product' => true,
+        'customer' => true,
     ];
 }
