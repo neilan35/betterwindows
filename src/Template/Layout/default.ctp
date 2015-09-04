@@ -34,17 +34,18 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <!-- Boostrap CSS -->
     <?php echo $this->Html->css('bootstrap.min.css');?>
     <?php echo $this->Html->css('bootstrap.css');?>
-    
+
+      <!-- datatable -->
+      <?php echo $this->Html->css('dataTables.bootstrap.css');?>
+    <?php echo $this->Html->css('dataTables.responsive.css');?>
 
     <!-- Sbadmincss -->
     <?php echo $this->Html->css('sb-admin-2.css');?>
     <?php echo $this->Html->css('metisMenu.min.css');?>
     <?php echo $this->Html->css('custom.css');?>
 
-    <!-- datatable -->
-     <?php echo $this->Html->css('dataTables.bootstrap.css');?>
-    <?php echo $this->Html->css('dataTables.responsive.css');?>
-
+  
+   
     <!-- datatable2 -->
      <?php echo $this->Html->css('jquery.dataTables.min.css');?>
     <!-- Font -->
@@ -53,12 +54,11 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <!-- JS -->
     
     <?php echo $this->Html->script('jquery.min.js');?>
+    <?php echo $this->Html->script('jquery.dataTables.min.js');?>
     <?php echo $this->Html->script('bootstrap.min.js');?>
     <?php echo $this->Html->script('bootstrap-combobox.js');?>
     <?php echo $this->Html->script('sb-admin-2.js');?>
     <?php echo $this->Html->script('metisMenu.min.js');?>
-    <?php echo $this->Html->script('jquery.dataTables.min.js');?>
-
     
     
 
@@ -316,9 +316,246 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                             echo $this->Html->link('<span> <i class="glyphicon glyphicon-th-list"></i> Customers List</span>', ['controller' => 'Customers', 'action' => 'index'], ['escape' => false]); ?>
                                 </li>
                             </ul>
+                        </li>
+                        <!-- <li>
+                            <a href="#"><i class="fa fa-table fa-fw"></i> Quote Products<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <?php 
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Add Quote Products</span>', ['controller' => 'Quoteproducts', 'action' => 'add'], ['escape' => false]); ?>
+                                </li>
+                                <li>
+                                    <?php 
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-th-list"></i> Quote Products List</span>', ['controller' => 'Quoteproducts', 'action' => 'index'], ['escape' => false]); ?>
+                                </li>
+                            </ul>
+                        </li> -->
+                        <li>
+                            <a href="#"><i class="fa fa-table fa-fw"></i> Colour Category<span class="fa arrow"></span></a>
+                            <ul class= "nav nav-second-level">
+                                <li>
+                                    <?php 
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Add Colour Categories</span>', ['controller' => 'Categories', 'action' => 'add'], ['escape' => false]); ?>
+                                </li>
+                                <li>
+                                    <?php 
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Categories Index</span>', ['controller' => 'Categories', 'action' => 'index'], ['escape' => false]); ?>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-table fa-fw"></i> Colours<span class="fa arrow"></span></a>
+                            <ul class= "nav nav-second-level">
+                                <li>
+                                    <?php 
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Add Colours</span>', ['controller' => 'Colours', 'action' => 'add'], ['escape' => false]); ?>
+                                </li>
+                                <li>
+                                    <?php 
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Colours Index</span>', ['controller' => 'Colours', 'action' => 'index'], ['escape' => false]); ?>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-table fa-fw"></i>Bal Ratings<span class="fa arrow"></span></a>
+                            <ul class= "nav nav-second-level">
+                                <li>
+                                    <?php 
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Add Bal Ratings</span>', ['controller' => 'Balratings', 'action' => 'add'], ['escape' => false]); ?>
+                                </li>
+                                <li>
+                                    <?php 
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Bal Rating Index</span>', ['controller' => 'Balratings', 'action' => 'index'], ['escape' => false]); ?>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-table fa-fw"></i> Reveal Sizes<span class="fa arrow"></span></a>
+                            <ul class= "nav nav-second-level">
+                                <li>
+                                    <?php 
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Add Reveal Sizes</span>', ['controller' => 'Reveals', 'action' => 'add'], ['escape' => false]); ?>
+                                </li>
+                                <li>
+                                    <?php 
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Reveal size Index</span>', ['controller' => 'Reveals', 'action' => 'index'], ['escape' => false]); ?>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-table fa-fw"></i>Item Types<span class="fa arrow"></span></a>
+                            <ul class= "nav nav-second-level">
+                                <li>
+                                    <?php 
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Add Item Types</span>', ['controller' => 'Itemtypes', 'action' => 'add'], ['escape' => false]); ?>
+                                </li>
+                                <li>
+                                    <?php 
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Item Type Index</span>', ['controller' => 'Itemtypes', 'action' => 'index'], ['escape' => false]); ?>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-table fa-fw"></i>Open Types<span class="fa arrow"></span></a>
+                            <ul class= "nav nav-second-level">
+                                <li>
+                                    <?php 
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Add Open Types</span>', ['controller' => 'Opentypes', 'action' => 'add'], ['escape' => false]); ?>
+                                </li>
+                                <li>
+                                    <?php 
+                                        echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Open Type Index</span>', ['controller' => 'Opentypes', 'action' => 'index'], ['escape' => false]); ?>
+                                </li>
+                            </ul>
+                                </li>
+                        <li>
+                            <a href="#"><i class="fa fa-table fa-fw"></i>Designs<span class="fa arrow"></span></a>
+                            <ul class= "nav nav-second-level">
+                                <li>
+                                    <?php 
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Add a Design</span>', ['controller' => 'Designs', 'action' => 'add'], ['escape' => false]); ?>
+                                </li>
+                                <li>
+                                    <?php 
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Designs Index</span>', ['controller' => 'Designs', 'action' => 'index'], ['escape' => false]); ?>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-table fa-fw"></i>Pictures<span class="fa arrow"></span></a>
+                            <ul class= "nav nav-second-level">
+                                <li>
+                                    <?php 
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Add a Picture</span>', ['controller' => 'Pictures', 'action' => 'add'], ['escape' => false]); ?>
+                                </li>
+                                <li>
+                                    <?php 
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Pictures Index</span>', ['controller' => 'Pictures', 'action' => 'index'], ['escape' => false]); ?>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-table fa-fw"></i>Fly Screens<span class="fa arrow"></span></a>
+                            <ul class= "nav nav-second-level">
+                                <li>
+                                    <?php 
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Add Fly Screens</span>', ['controller' => 'Flyscreentypes', 'action' => 'add'], ['escape' => false]); ?>
+                                </li>
+                                <li>
+                                    <?php 
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Fly Screens Index</span>', ['controller' => 'Flyscreentypes', 'action' => 'index'], ['escape' => false]); ?>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-table fa-fw"></i>Fly Screens Open Types<span class="fa arrow"></span></a>
+                            <ul class= "nav nav-second-level">
+                                <li>
+                                    <?php 
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Add Fly Screen Open Types</span>', ['controller' => 'Flyscreenopentypes', 'action' => 'add'], ['escape' => false]); ?>
+                                </li>
+                                <li>
+                                    <?php 
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Fly Screen Open Types Index</span>', ['controller' => 'Flyscreenopentypes', 'action' => 'index'], ['escape' => false]); ?>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-table fa-fw"></i>Mesh Types<span class="fa arrow"></span></a>
+                            <ul class= "nav nav-second-level">
+                                <li>
+                                    <?php 
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Add Mesh Types</span>', ['controller' => 'Meshtypes', 'action' => 'add'], ['escape' => false]); ?>
+                                </li>
+                                <li>
+                                    <?php 
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Mesh Type Index</span>', ['controller' => 'Meshtypes', 'action' => 'index'], ['escape' => false]); ?>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-table fa-fw"></i>Fly Screen Mesh Types<span class="fa arrow"></span></a>
+                            <ul class= "nav nav-second-level">
+                                <li>
+                                    <?php 
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Add Fly Screen Mesh Types</span>', ['controller' => 'FlyScreenmeshes', 'action' => 'add'], ['escape' => false]); ?>
+                                </li>
+                                <li>
+                                    <?php 
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Fly Screen Mesh Type Index</span>', ['controller' => 'FlyScreenmeshes', 'action' => 'index'], ['escape' => false]); ?>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-table fa-fw"></i>Glass Usage<span class="fa arrow"></span></a>
+                            <ul class= "nav nav-second-level">
+                                <li>
+                                    <?php 
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Add a Glass Usage </span>', ['controller' => 'usages', 'action' => 'add'], ['escape' => false]); ?>
+                                </li>
+                                <li>
+                                    <?php 
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Glass Usage Index</span>', ['controller' => 'usages', 'action' => 'index'], ['escape' => false]); ?>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-table fa-fw"></i>Glass Composition<span class="fa arrow"></span></a>
+                            <ul class= "nav nav-second-level">
+                                <li>
+                                    <?php 
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Add a Glass Composition </span>', ['controller' => 'Glasscomps', 'action' => 'add'], ['escape' => false]); ?>
+                                </li>
+                                <li>
+                                    <?php 
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Glass Composition Index</span>', ['controller' => 'Glasscomps', 'action' => 'index'], ['escape' => false]); ?>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-table fa-fw"></i>Glass Types<span class="fa arrow"></span></a>
+                            <ul class= "nav nav-second-level">
+                                <li>
+                                    <?php 
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Add a Glass Type </span>', ['controller' => 'Glasstypes', 'action' => 'add'], ['escape' => false]); ?>
+                                </li>
+                                <li>
+                                    <?php 
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Glass Type Index</span>', ['controller' => 'Glasstypes', 'action' => 'index'], ['escape' => false]); ?>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-table fa-fw"></i>Glazings<span class="fa arrow"></span></a>
+                            <ul class= "nav nav-second-level">
+                                <li>
+                                    <?php 
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Add a Glazing</span>', ['controller' => 'Glazings', 'action' => 'add'], ['escape' => false]); ?>
+                                </li>
+                                <li>
+                                    <?php 
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Glazings Index</span>', ['controller' => 'Glazings', 'action' => 'index'], ['escape' => false]); ?>
+                                </li>
+                            </ul>
+                        </li>
+                    
                             <!-- /.nav-second-level -->
+                    
+                        <li>
+                            <a href="#"><i class="fa fa-table fa-fw"></i> Quotes<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                <?php 
+                            echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Add Quotes</span>', ['controller' => 'Quotes', 'action' => 'add'], ['escape' => false]); ?>
+                                </li>
+                                <li>
+                                <?php 
+                            echo $this->Html->link('<span> <i class="glyphicon glyphicon-th-list"></i> Quotes List</span>', ['controller' => 'Quotes', 'action' => 'index'], ['escape' => false]); ?>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
+
                 </div>
                 <!-- /.sidebar-collapse -->
             </div>
