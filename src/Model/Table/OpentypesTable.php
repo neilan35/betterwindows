@@ -22,7 +22,7 @@ class OpentypesTable extends Table
     public function initialize(array $config)
     {
         $this->table('opentypes');
-        $this->displayField('id');
+        $this->displayField('name');
         $this->primaryKey('id');
         $this->belongsTo('Itemtypes', [
             'foreignKey' => 'itemtype_id'
