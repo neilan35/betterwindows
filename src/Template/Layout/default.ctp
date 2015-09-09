@@ -339,7 +339,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                                 </li>
                                 <li>
                                     <?php 
-                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Categories Index</span>', ['controller' => 'Categories', 'action' => 'index'], ['escape' => false]); ?>
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-list"></i> Categories Index</span>', ['controller' => 'Categories', 'action' => 'index'], ['escape' => false]); ?>
                                 </li>
                             </ul>
                         </li>
@@ -352,7 +352,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                                 </li>
                                 <li>
                                     <?php 
-                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Colours Index</span>', ['controller' => 'Colours', 'action' => 'index'], ['escape' => false]); ?>
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-list"></i> Colours Index</span>', ['controller' => 'Colours', 'action' => 'index'], ['escape' => false]); ?>
                                 </li>
                             </ul>
                         </li>
@@ -365,7 +365,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                                 </li>
                                 <li>
                                     <?php 
-                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Bal Rating Index</span>', ['controller' => 'Balratings', 'action' => 'index'], ['escape' => false]); ?>
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-list"></i> Bal Rating Index</span>', ['controller' => 'Balratings', 'action' => 'index'], ['escape' => false]); ?>
                                 </li>
                             </ul>
                         </li>
@@ -378,7 +378,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                                 </li>
                                 <li>
                                     <?php 
-                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Reveal size Index</span>', ['controller' => 'Reveals', 'action' => 'index'], ['escape' => false]); ?>
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-list"></i> Reveal size Index</span>', ['controller' => 'Reveals', 'action' => 'index'], ['escape' => false]); ?>
                                 </li>
                             </ul>
                         </li>
@@ -391,7 +391,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                                 </li>
                                 <li>
                                     <?php 
-                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Item Type Index</span>', ['controller' => 'Itemtypes', 'action' => 'index'], ['escape' => false]); ?>
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-list"></i> Item Type Index</span>', ['controller' => 'Itemtypes', 'action' => 'index'], ['escape' => false]); ?>
                                 </li>
                             </ul>
                         </li>
@@ -404,7 +404,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                                 </li>
                                 <li>
                                     <?php 
-                                        echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Open Type Index</span>', ['controller' => 'Opentypes', 'action' => 'index'], ['escape' => false]); ?>
+                                        echo $this->Html->link('<span> <i class="glyphicon glyphicon-list"></i> Open Type Index</span>', ['controller' => 'Opentypes', 'action' => 'index'], ['escape' => false]); ?>
                                 </li>
                             </ul>
                                 </li>
@@ -417,7 +417,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                                 </li>
                                 <li>
                                     <?php 
-                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Designs Index</span>', ['controller' => 'Designs', 'action' => 'index'], ['escape' => false]); ?>
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-list"></i> Designs Index</span>', ['controller' => 'Designs', 'action' => 'index'], ['escape' => false]); ?>
                                 </li>
                             </ul>
                         </li>
@@ -430,7 +430,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                                 </li>
                                 <li>
                                     <?php 
-                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Pictures Index</span>', ['controller' => 'Pictures', 'action' => 'index'], ['escape' => false]); ?>
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-list"></i> Pictures Index</span>', ['controller' => 'Pictures', 'action' => 'index'], ['escape' => false]); ?>
                                 </li>
                             </ul>
                         </li>
@@ -443,7 +443,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                                 </li>
                                 <li>
                                     <?php 
-                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Fly Screens Index</span>', ['controller' => 'Flyscreentypes', 'action' => 'index'], ['escape' => false]); ?>
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-list"></i> Fly Screens Index</span>', ['controller' => 'Flyscreentypes', 'action' => 'index'], ['escape' => false]); ?>
                                 </li>
                             </ul>
                         </li>
@@ -456,7 +456,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                                 </li>
                                 <li>
                                     <?php 
-                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Fly Screen Open Types Index</span>', ['controller' => 'Flyscreenopentypes', 'action' => 'index'], ['escape' => false]); ?>
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-list"></i> Fly Screen Open Types Index</span>', ['controller' => 'Flyscreenopentypes', 'action' => 'index'], ['escape' => false]); ?>
                                 </li>
                             </ul>
                         </li>
@@ -469,7 +469,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                                 </li>
                                 <li>
                                     <?php 
-                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Mesh Type Index</span>', ['controller' => 'Meshtypes', 'action' => 'index'], ['escape' => false]); ?>
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-list"></i> Mesh Type Index</span>', ['controller' => 'Meshtypes', 'action' => 'index'], ['escape' => false]); ?>
                                 </li>
                             </ul>
                         </li>
@@ -482,7 +482,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                                 </li>
                                 <li>
                                     <?php 
-                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Fly Screen Mesh Type Index</span>', ['controller' => 'FlyScreenmeshes', 'action' => 'index'], ['escape' => false]); ?>
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-list"></i> Fly Screen Mesh Type Index</span>', ['controller' => 'FlyScreenmeshes', 'action' => 'index'], ['escape' => false]); ?>
                                 </li>
                             </ul>
                         </li>
@@ -495,7 +495,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                                 </li>
                                 <li>
                                     <?php 
-                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Glass Usage Index</span>', ['controller' => 'usages', 'action' => 'index'], ['escape' => false]); ?>
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-list"></i> Glass Usage Index</span>', ['controller' => 'usages', 'action' => 'index'], ['escape' => false]); ?>
                                 </li>
                             </ul>
                         </li>
@@ -508,7 +508,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                                 </li>
                                 <li>
                                     <?php 
-                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Glass Composition Index</span>', ['controller' => 'Glasscomps', 'action' => 'index'], ['escape' => false]); ?>
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-list"></i> Glass Composition Index</span>', ['controller' => 'Glasscomps', 'action' => 'index'], ['escape' => false]); ?>
                                 </li>
                             </ul>
                         </li>
@@ -521,7 +521,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                                 </li>
                                 <li>
                                     <?php 
-                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Glass Type Index</span>', ['controller' => 'Glasstypes', 'action' => 'index'], ['escape' => false]); ?>
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-list"></i> Glass Type Index</span>', ['controller' => 'Glasstypes', 'action' => 'index'], ['escape' => false]); ?>
                                 </li>
                             </ul>
                         </li>
@@ -534,7 +534,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                                 </li>
                                 <li>
                                     <?php 
-                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Glazings Index</span>', ['controller' => 'Glazings', 'action' => 'index'], ['escape' => false]); ?>
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-list"></i> Glazings Index</span>', ['controller' => 'Glazings', 'action' => 'index'], ['escape' => false]); ?>
                                 </li>
                             </ul>
                         </li>

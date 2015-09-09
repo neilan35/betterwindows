@@ -1,20 +1,30 @@
-<div class="actions columns large-2 medium-3">
-    <h3><?= __('Actions') ?></h3>
-    <ul class="side-nav">
-        <li><?= $this->Html->link(__('List Pictures'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Designs'), ['controller' => 'Designs', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Design'), ['controller' => 'Designs', 'action' => 'add']) ?> </li>
-    </ul>
-</div>
-<div class="pictures form large-10 medium-9 columns">
-    <?= $this->Form->create($picture); ?>
-    <fieldset>
-        <legend><?= __('Add Picture') ?></legend>
-        <?php
-            echo $this->Form->input('filename');
-            echo $this->Form->input('description');
-        ?>
-    </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
-    <?= $this->Form->end() ?>
+<?= $this->Form->create($picture); ?>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Add a picture
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <form class="form-horizontal" role="form">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <?= $this->Form->input('filename', ['class' => 'form-control']) ?>
+                                </div>
+                                <div class="form-group">
+                                    <?= $this->Form->input('description', ['class' => 'form-control']) ?>
+                                </div>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            <button type="submit" class="btn btn-default">Submit </button>
+            <?= $this->Form->end() ?>
+            </div>
+        </div>
+    </div>
 </div>

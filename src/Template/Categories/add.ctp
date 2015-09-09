@@ -1,19 +1,27 @@
-<div class="actions columns large-2 medium-3">
-    <h3><?= __('Actions') ?></h3>
-    <ul class="side-nav">
-        <li><?= $this->Html->link(__('List Categories'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Colours'), ['controller' => 'Colours', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Colour'), ['controller' => 'Colours', 'action' => 'add']) ?> </li>
-    </ul>
-</div>
-<div class="categories form large-10 medium-9 columns">
-    <?= $this->Form->create($category); ?>
-    <fieldset>
-        <legend><?= __('Add Category') ?></legend>
-        <?php
-            echo $this->Form->input('price');
-        ?>
-    </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
-    <?= $this->Form->end() ?>
+<?= $this->Form->create($category); ?>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Add a Colour category
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <form class="form-horizontal" role="form">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <?= $this->Form->input('price', ['class' => 'form-control']) ?>
+                                </div>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            <button type="submit" class="btn btn-default">Submit </button>
+            <?= $this->Form->end() ?>
+            </div>
+        </div>
+    </div>
 </div>
