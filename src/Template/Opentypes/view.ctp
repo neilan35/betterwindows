@@ -1,38 +1,35 @@
-<div class="actions columns large-2 medium-3">
-    <h3><?= __('Actions') ?></h3>
-    <ul class="side-nav">
-        <li><?= $this->Html->link(__('Edit Opentype'), ['action' => 'edit', $opentype->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Opentype'), ['action' => 'delete', $opentype->id], ['confirm' => __('Are you sure you want to delete # {0}?', $opentype->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Opentypes'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Opentype'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Itemtypes'), ['controller' => 'Itemtypes', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Itemtype'), ['controller' => 'Itemtypes', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Designs'), ['controller' => 'Designs', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Design'), ['controller' => 'Designs', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Flyscreenopentypes'), ['controller' => 'Flyscreenopentypes', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Flyscreenopentype'), ['controller' => 'Flyscreenopentypes', 'action' => 'add']) ?> </li>
-    </ul>
-</div>
-<div class="opentypes view large-10 medium-9 columns">
-    <h2><?= h($opentype->name) ?></h2>
-    <div class="row">
-        <div class="large-5 columns strings">
-            <h6 class="subheader"><?= __('Itemtype') ?></h6>
-            <p><?= $opentype->has('itemtype') ? $this->Html->link($opentype->itemtype->id, ['controller' => 'Itemtypes', 'action' => 'view', $opentype->itemtype->id]) : '' ?></p>
-            <h6 class="subheader"><?= __('Name') ?></h6>
-            <p><?= h($opentype->name) ?></p>
-        </div>
-        <div class="large-2 columns numbers end">
-            <h6 class="subheader"><?= __('Id') ?></h6>
-            <p><?= $this->Number->format($opentype->id) ?></p>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                View Open Types
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h4 class="subheader"><?= __('Id') ?></h4>
+                        <p><?= $this->Number->format($opentype->id) ?></p>
+                        <h4 class="subheader"><?= __('Item Type') ?></h4>
+                        <p><?= $opentype->has('itemtype') ? $this->Html->link($opentype->itemtype->id, ['controller' => 'Itemtypes', 'action' => 'view', $opentype->itemtype->id]) : '' ?></p>
+                        <h4 class="subheader"><?= __('Name') ?></h4>
+                        <p><?= h($opentype->name) ?></p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function(){
+        $('#tableIndex').DataTable();
+    });
+</script>
+
 <div class="related row">
-    <div class="column large-12">
+    <div class="table-responsive">
     <h4 class="subheader"><?= __('Related Designs') ?></h4>
     <?php if (!empty($opentype->designs)): ?>
-    <table cellpadding="0" cellspacing="0">
+    <table class="table table-hover" id="tableIndex">
         <tr>
             <th><?= __('Id') ?></th>
             <th><?= __('Opentype Id') ?></th>
@@ -58,10 +55,10 @@
     </div>
 </div>
 <div class="related row">
-    <div class="column large-12">
+    <div class="table-responsive">
     <h4 class="subheader"><?= __('Related Flyscreenopentypes') ?></h4>
     <?php if (!empty($opentype->flyscreenopentypes)): ?>
-    <table cellpadding="0" cellspacing="0">
+    <table class="table table-hover" id="tableIndex">
         <tr>
             <th><?= __('Id') ?></th>
             <th><?= __('Opentype Id') ?></th>

@@ -1,8 +1,11 @@
-<div id="page-wrapper">
-<h2 class="sub-header">Glass Compositions</h2>
+        <script>
+        $(document).ready(function(){
+            $('#tableIndex').DataTable();
+        });
+        </script>
 
-<div class="table-responsive">
-    <table class="table table-striped">
+    <div class="table-responsive">
+    <table class="table table-hover" id="tableIndex">
     <thead>
         <tr>
             <th><?= $this->Paginator->sort('id', 'ID') ?></th>

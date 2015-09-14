@@ -1,34 +1,35 @@
-<div class="actions columns large-2 medium-3">
-    <h3><?= __('Actions') ?></h3>
-    <ul class="side-nav">
-        <li><?= $this->Html->link(__('Edit Meshtype'), ['action' => 'edit', $meshtype->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Meshtype'), ['action' => 'delete', $meshtype->id], ['confirm' => __('Are you sure you want to delete # {0}?', $meshtype->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Meshtypes'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Meshtype'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Flyscreenmeshes'), ['controller' => 'Flyscreenmeshes', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Flyscreenmesh'), ['controller' => 'Flyscreenmeshes', 'action' => 'add']) ?> </li>
-    </ul>
-</div>
-<div class="meshtypes view large-10 medium-9 columns">
-    <h2><?= h($meshtype->id) ?></h2>
-    <div class="row">
-        <div class="large-5 columns strings">
-            <h6 class="subheader"><?= __('Type') ?></h6>
-            <p><?= h($meshtype->type) ?></p>
-        </div>
-        <div class="large-2 columns numbers end">
-            <h6 class="subheader"><?= __('Id') ?></h6>
-            <p><?= $this->Number->format($meshtype->id) ?></p>
-            <h6 class="subheader"><?= __('Price') ?></h6>
-            <p><?= $this->Number->format($meshtype->price) ?></p>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                View Mesh Types
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h4 class="subheader"><?= __('Id') ?></h4>
+                        <p><?= $this->Number->format($meshtype->id) ?></p>
+                        <h4 class="subheader"><?= __('Type') ?></h4>
+                        <p><?= h($meshtype->type) ?></p>
+                        <h4 class="subheader"><?= __('Price') ?></h4>
+                        <p><?= $this->Number->format($meshtype->price) ?></p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function(){
+        $('#tableIndex').DataTable();
+    });
+</script>
+
 <div class="related row">
-    <div class="column large-12">
+    <div class="table-responsive">
     <h4 class="subheader"><?= __('Related Flyscreenmeshes') ?></h4>
     <?php if (!empty($meshtype->flyscreenmeshes)): ?>
-    <table cellpadding="0" cellspacing="0">
+    <table class="table table-hover" id="tableIndex">
         <tr>
             <th><?= __('Id') ?></th>
             <th><?= __('Balrating Id') ?></th>

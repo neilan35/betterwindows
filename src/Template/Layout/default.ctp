@@ -317,7 +317,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                                 </li>
                             </ul>
                         </li>
-                        <!-- <li>
+                        <li>
                             <a href="#"><i class="fa fa-table fa-fw"></i> Quote Products<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
@@ -329,7 +329,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                                     echo $this->Html->link('<span> <i class="glyphicon glyphicon-th-list"></i> Quote Products List</span>', ['controller' => 'Quoteproducts', 'action' => 'index'], ['escape' => false]); ?>
                                 </li>
                             </ul>
-                        </li> -->
+                        </li>
                         <li>
                             <a href="#"><i class="fa fa-table fa-fw"></i> Colour Category<span class="fa arrow"></span></a>
                             <ul class= "nav nav-second-level">
@@ -504,11 +504,11 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                             <ul class= "nav nav-second-level">
                                 <li>
                                     <?php 
-                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Add a Glass Composition </span>', ['controller' => 'Glasscomps', 'action' => 'add'], ['escape' => false]); ?>
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-import"></i> Add a Glass Composition </span>', ['controller' => 'compositions', 'action' => 'add'], ['escape' => false]); ?>
                                 </li>
                                 <li>
                                     <?php 
-                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-list"></i> Glass Composition Index</span>', ['controller' => 'Glasscomps', 'action' => 'index'], ['escape' => false]); ?>
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-list"></i> Glass Composition Index</span>', ['controller' => 'compositions', 'action' => 'index'], ['escape' => false]); ?>
                                 </li>
                             </ul>
                         </li>

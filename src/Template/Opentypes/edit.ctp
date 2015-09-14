@@ -1,30 +1,34 @@
-<div class="actions columns large-2 medium-3">
-    <h3><?= __('Actions') ?></h3>
-    <ul class="side-nav">
-        <li><?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $opentype->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $opentype->id)]
-            )
-        ?></li>
-        <li><?= $this->Html->link(__('List Opentypes'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Itemtypes'), ['controller' => 'Itemtypes', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Itemtype'), ['controller' => 'Itemtypes', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Designs'), ['controller' => 'Designs', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Design'), ['controller' => 'Designs', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Flyscreenopentypes'), ['controller' => 'Flyscreenopentypes', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Flyscreenopentype'), ['controller' => 'Flyscreenopentypes', 'action' => 'add']) ?> </li>
-    </ul>
-</div>
-<div class="opentypes form large-10 medium-9 columns">
-    <?= $this->Form->create($opentype); ?>
-    <fieldset>
-        <legend><?= __('Edit Opentype') ?></legend>
-        <?php
-            echo $this->Form->input('itemtype_id', ['options' => $itemtypes, 'empty' => true]);
-            echo $this->Form->input('name');
-        ?>
-    </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
-    <?= $this->Form->end() ?>
+<?= $this->Form->create($opentype); ?>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Edit Open Type
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <form class="form-horizontal" role="form">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="dropdown">
+                                    <?= $this->Form->input('itemtype_id', ['class' => 'combobox form-control',
+                                                       'options' => $itemtypes,
+                                                       'empty'=> true,
+                                                       'required' => true,
+                                                       'label' => 'Item Types']);?>
+                                </div>
+                                <div class="form-group">
+                                    <?= $this->Form->input('name', ['class' => 'form-control']) ?>
+                                </div>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            <button type="submit" class="btn btn-default">Submit </button>
+            <?= $this->Form->end() ?>
+            </div>
+        </div>
+    </div>
 </div>

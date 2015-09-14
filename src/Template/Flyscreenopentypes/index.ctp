@@ -1,23 +1,10 @@
-<script>
+        <script>
         $(document).ready(function(){
             $('#tableIndex').DataTable();
         });
-</script>
+        </script>
 
-<div class="actions columns large-2 medium-3">
-    <h3><?= __('Actions') ?></h3>
-    <ul class="side-nav">
-        <li><?= $this->Html->link(__('New Flyscreenopentype'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Opentypes'), ['controller' => 'Opentypes', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Opentype'), ['controller' => 'Opentypes', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Flyscreentypes'), ['controller' => 'Flyscreentypes', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Flyscreentype'), ['controller' => 'Flyscreentypes', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Flyscreenmeshes'), ['controller' => 'Flyscreenmeshes', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Flyscreenmesh'), ['controller' => 'Flyscreenmeshes', 'action' => 'add']) ?> </li>
-    </ul>
-</div>
-
-<div class="table-responsive">
+    <div class="table-responsive">
     <table class="table table-hover" id="tableIndex">
     <thead>
         <tr>

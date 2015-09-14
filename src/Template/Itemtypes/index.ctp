@@ -1,15 +1,11 @@
-<div class="actions columns large-2 medium-3">
-    <h3><?= __('Actions') ?></h3>
-    <ul class="side-nav">
-        <li><?= $this->Html->link(__('New Itemtype'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Opentypes'), ['controller' => 'Opentypes', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Opentype'), ['controller' => 'Opentypes', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Products'), ['controller' => 'Products', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Product'), ['controller' => 'Products', 'action' => 'add']) ?> </li>
-    </ul>
-</div>
-<div class="itemtypes index large-10 medium-9 columns">
-    <table cellpadding="0" cellspacing="0">
+        <script>
+        $(document).ready(function(){
+            $('#tableIndex').DataTable();
+        });
+        </script>
+
+    <div class="table-responsive">
+    <table class="table table-hover" id="tableIndex">
     <thead>
         <tr>
             <th><?= $this->Paginator->sort('id') ?></th>

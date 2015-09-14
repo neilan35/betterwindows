@@ -1,21 +1,11 @@
-<div class="actions columns large-2 medium-3">
-    <h3><?= __('Actions') ?></h3>
-    <ul class="side-nav">
-        <li><?= $this->Html->link(__('New Glazing'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Usages'), ['controller' => 'Usages', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Usage'), ['controller' => 'Usages', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Glasstypes'), ['controller' => 'Glasstypes', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Glasstype'), ['controller' => 'Glasstypes', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Compositions'), ['controller' => 'Compositions', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Composition'), ['controller' => 'Compositions', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Balratings'), ['controller' => 'Balratings', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Balrating'), ['controller' => 'Balratings', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Products'), ['controller' => 'Products', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Product'), ['controller' => 'Products', 'action' => 'add']) ?> </li>
-    </ul>
-</div>
-<div class="glazings index large-10 medium-9 columns">
-    <table cellpadding="0" cellspacing="0">
+        <script>
+        $(document).ready(function(){
+            $('#tableIndex').DataTable();
+        });
+        </script>
+
+    <div class="table-responsive">
+    <table class="table table-hover" id="tableIndex">
     <thead>
         <tr>
             <th><?= $this->Paginator->sort('id') ?></th>

@@ -11,11 +11,19 @@
                         <form class="form-horizontal" role="form">
                         <div class="row">
                             <div class="col-lg-6">
-                                <div class="form-group">
-                                    <?= $this->Form->input('opentype_id', ['options' => $opentypes]) ?>
+                                <div class="dropdown">
+                                    <?= $this->Form->input('opentype_id', ['class' => 'combobox form-control',
+                                                       'options' => $opentypes,
+                                                       'empty'=> true,
+                                                       'required' => true,
+                                                       'label' => 'Open Types']);?>
                                 </div>
-                                <div class="form-group">
-                                    <?= $this->Form->input('flyscreentype_id', ['options' => $flyscreentypes]) ?>
+                                <div class="dropdown">
+                                    <?= $this->Form->input('flyscreentype_id', ['class' => 'combobox form-control',
+                                                       'options' => $flyscreentypes,
+                                                       'empty'=> true,
+                                                       'required' => true,
+                                                       'label' => 'Fly Screen Types']);?>
                                 </div>
                             </div>
                         </div>

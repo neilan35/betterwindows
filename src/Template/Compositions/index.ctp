@@ -1,13 +1,10 @@
-<div class="actions columns large-2 medium-3">
-    <h3><?= __('Actions') ?></h3>
-    <ul class="side-nav">
-        <li><?= $this->Html->link(__('New Composition'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Glazings'), ['controller' => 'Glazings', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Glazing'), ['controller' => 'Glazings', 'action' => 'add']) ?> </li>
-    </ul>
-</div>
-<div class="compositions index large-10 medium-9 columns">
-    <table cellpadding="0" cellspacing="0">
+<script>
+    $(document).ready(function(){
+        $('#tableIndex').DataTable();
+    });
+</script>
+<div class="table-responsive">
+    <table class="table table-hover" id="tableIndex">
     <thead>
         <tr>
             <th><?= $this->Paginator->sort('id') ?></th>

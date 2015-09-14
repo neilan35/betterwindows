@@ -1,25 +1,26 @@
-<div class="actions columns large-2 medium-3">
-    <h3><?= __('Actions') ?></h3>
-    <ul class="side-nav">
-        <li><?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $category->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $category->id)]
-            )
-        ?></li>
-        <li><?= $this->Html->link(__('List Categories'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Colours'), ['controller' => 'Colours', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Colour'), ['controller' => 'Colours', 'action' => 'add']) ?> </li>
-    </ul>
-</div>
-<div class="categories form large-10 medium-9 columns">
-    <?= $this->Form->create($category); ?>
-    <fieldset>
-        <legend><?= __('Edit Category') ?></legend>
-        <?php
-            echo $this->Form->input('price');
-        ?>
-    </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
-    <?= $this->Form->end() ?>
+<?= $this->Form->create($category); ?>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Edit Categories
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <form class="form-horizontal" role="form">
+                            <div class="col-lg-8">
+                                <div class="form-group">
+                                <?= $this->Form->input('price', ['class' => 'form-control']) ?>
+                                </div>
+                            </div>
+                        </form>                
+                    </div>
+                </div>
+                <?= $this->Form->button(__('Submit')) ?>
+                        <?= $this->Form->end() ?>
+            </div>
+
+        </div>
+    </div>
 </div>

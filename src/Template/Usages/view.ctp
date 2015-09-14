@@ -1,32 +1,32 @@
-<div class="actions columns large-2 medium-3">
-    <h3><?= __('Actions') ?></h3>
-    <ul class="side-nav">
-        <li><?= $this->Html->link(__('Edit Usage'), ['action' => 'edit', $usage->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Usage'), ['action' => 'delete', $usage->id], ['confirm' => __('Are you sure you want to delete # {0}?', $usage->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Usages'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Usage'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Glazings'), ['controller' => 'Glazings', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Glazing'), ['controller' => 'Glazings', 'action' => 'add']) ?> </li>
-    </ul>
-</div>
-<div class="usages view large-10 medium-9 columns">
-    <h2><?= h($usage->id) ?></h2>
-    <div class="row">
-        <div class="large-5 columns strings">
-            <h6 class="subheader"><?= __('Efficiency') ?></h6>
-            <p><?= h($usage->efficiency) ?></p>
-        </div>
-        <div class="large-2 columns numbers end">
-            <h6 class="subheader"><?= __('Id') ?></h6>
-            <p><?= $this->Number->format($usage->id) ?></p>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                View Open Types
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h4 class="subheader"><?= __('Id') ?></h4>
+                        <p><?= $this->Number->format($usage->id) ?></p>
+                        <h4 class="subheader"><?= __('Efficiency') ?></h4>
+                        <p><?= h($usage->efficiency) ?></p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function(){
+        $('#tableIndex').DataTable();
+    });
+</script>
+
 <div class="related row">
-    <div class="column large-12">
+    <div class="table-responsive">
     <h4 class="subheader"><?= __('Related Glazings') ?></h4>
     <?php if (!empty($usage->glazings)): ?>
-    <table cellpadding="0" cellspacing="0">
+    <table class="table table-hover" id="tableIndex">
         <tr>
             <th><?= __('Id') ?></th>
             <th><?= __('Usage Id') ?></th>

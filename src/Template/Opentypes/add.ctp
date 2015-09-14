@@ -11,8 +11,12 @@
                         <form class="form-horizontal" role="form">
                         <div class="row">
                             <div class="col-lg-6">
-                                <div class="form-group">
-                                    <?= $this->Form->input('itemtype_id', ['options' => $itemtypes, 'empty' => true]) ?>
+                                <div class="dropdown">
+                                    <?= $this->Form->input('itemtype_id', ['class' => 'combobox form-control',
+                                                       'options' => $itemtypes,
+                                                       'empty'=> true,
+                                                       'required' => true,
+                                                       'label' => 'Item Types']);?>
                                 </div>
                                 <div class="form-group">
                                     <?= $this->Form->input('name', ['class' => 'form-control']) ?>

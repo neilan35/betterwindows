@@ -11,17 +11,33 @@
                         <form class="form-horizontal" role="form">
                         <div class="row">
                             <div class="col-lg-6">
-                                <div class="form-group">
-                                    <?= $this->Form->input('usage_id', ['options' => $usages]) ?>
+                                <div class="dropdown">
+                                    <?= $this->Form->input('usage_id', ['class' => 'combobox form-control',
+                                                       'options' => $usages,
+                                                       'empty'=> true,
+                                                       'required' => true,
+                                                       'label' => 'Glass Usage']);?>
                                 </div>
-                                <div class="form-group">
-                                    <?= $this->Form->input('glasstype_id', ['options' => $glasstypes]) ?>
+                                <div class="dropdown">
+                                    <?= $this->Form->input('glasstype_id', ['class' => 'combobox form-control',
+                                                       'options' => $glasstypes,
+                                                       'empty'=> true,
+                                                       'required' => true,
+                                                       'label' => 'Glass Types']);?>
                                 </div>
-                                <div class="form-group">
-                                    <?= $this->Form->input('composition_id', ['options' => $compositions]) ?>
+                                <div class="dropdown">
+                                    <?= $this->Form->input('composition_id', ['class' => 'combobox form-control',
+                                                       'options' => $compositions,
+                                                       'empty'=> true,
+                                                       'required' => true,
+                                                       'label' => 'Glass Compositions']);?>
                                 </div>
-                                <div class="form-group">
-                                    <?= $this->Form->input('balrating_id', ['options' => $balratings]) ?>
+                                <div class="dropdown">
+                                    <?= $this->Form->input('balrating_id', ['class' => 'combobox form-control',
+                                                       'options' => $balratings,
+                                                       'empty'=> true,
+                                                       'required' => true,
+                                                       'label' => 'Bal Ratings']);?>
                                 </div>
                                 <div class="form-group">
                                     <?= $this->Form->input('obscurity') ?>

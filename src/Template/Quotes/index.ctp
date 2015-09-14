@@ -1,41 +1,53 @@
-<div class="actions columns large-2 medium-3">
-    <h3><?= __('Actions') ?></h3>
-    <ul class="side-nav">
-        <li><?= $this->Html->link(__('New Quote'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Products'), ['controller' => 'Products', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Product'), ['controller' => 'Products', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Customers'), ['controller' => 'Customers', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Customer'), ['controller' => 'Customers', 'action' => 'add']) ?> </li>
-    </ul>
-</div>
-<div class="quotes index large-10 medium-9 columns">
-    <table cellpadding="0" cellspacing="0">
+
+        <script>
+        $(document).ready(function(){
+            $('#tableIndex').DataTable();
+        });
+        </script>
+
+    <div class="table-responsive">
+    <table class="table table-hover" id="tableIndex">   
     <thead>
         <tr>
             <th><?= $this->Paginator->sort('id') ?></th>
-            <th><?= $this->Paginator->sort('product_id') ?></th>
             <th><?= $this->Paginator->sort('customer_id') ?></th>
-            <th><?= $this->Paginator->sort('quoteno') ?></th>
+           <!--  <th><?= $this->Paginator->sort('quoteno') ?></th> -->
             <th><?= $this->Paginator->sort('item') ?></th>
             <th><?= $this->Paginator->sort('unitcost') ?></th>
             <th><?= $this->Paginator->sort('quantity') ?></th>
+            <th><?= $this->Paginator->sort('installation') ?></th>
+            <th><?= $this->Paginator->sort('delivery') ?></th>
+            <th><?= $this->Paginator->sort('status') ?></th>
+            
             <th class="actions"><?= __('Actions') ?></th>
         </tr>
     </thead>
     <tbody>
     <?php foreach ($quotes as $quote): ?>
         <tr>
-            <td><?= $this->Number->format($quote->id) ?></td>
-            <td>
-                <?= $quote->has('product') ? $this->Html->link($quote->product->id, ['controller' => 'Products', 'action' => 'view', $quote->product->id]) : '' ?>
-            </td>
+            <td><?= 'QN'.$this->Number->format($quote->id, ['pattern' => '000000'])?></td>
             <td>
                 <?= $quote->has('customer') ? $this->Html->link($quote->customer->first_name, ['controller' => 'Customers', 'action' => 'view', $quote->customer->id]) : '' ?>
             </td>
-            <td><?= h($quote->quoteno) ?></td>
+            <!-- <td><?= h($quote->quoteno) ?></td> -->
             <td><?= h($quote->item) ?></td>
-            <td><?= $this->Number->format($quote->unitcost) ?></td>
+            <td><?= $this->Number->format($quote->unitcost, ['places' => 2, 'before' => '$ ']) ?></td>
             <td><?= $this->Number->format($quote->quantity) ?></td>
+            
+            <?php if ($quote->installation === true){
+                    echo '<td> Yes </td>';
+                     }else{
+                        echo '<td> No</td>';
+                        }?>
+
+            <?php if ($quote->delivery === true){
+                    echo '<td> Yes</td>';
+                    }else{
+                        echo '<td> No</td>';
+                        }?>
+
+            <td><?= h($quote->status) ?></td>
+
             <td class="actions">
                 <?= $this->Html->link(__('View'), ['action' => 'view', $quote->id]) ?>
                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $quote->id]) ?>

@@ -11,11 +11,19 @@
                         <form class="form-horizontal" role="form">
                         <div class="row">
                             <div class="col-lg-6">
-                                <div class="form-group">
-                                    <?= $this->Form->input('opentype_id', ['options' => $opentypes, 'empty' => true]) ?>
+                                <div class="dropdown">
+                                    <?= $this->Form->input('opentype_id', ['class' => 'combobox form-control',
+                                                       'options' => $opentypes,
+                                                       'empty'=> true,
+                                                       'required' => true,
+                                                       'label' => 'Open Types']);?>
                                 </div>
-                                <div class="form-group">
-                                    <?= $this->Form->input('picture_id', ['options' => $pictures, 'empty' => true]) ?>
+                                <div class="dropdown">
+                                    <?= $this->Form->input('picture_id', ['class' => 'combobox form-control',
+                                                       'options' => $pictures,
+                                                       'empty'=> true,
+                                                       'required' => true,
+                                                       'label' => 'Pictures']);?>
                                 </div>
                             </div>
                         </div>
